@@ -38,45 +38,59 @@ class SeleniumActions():
         else:
             print("Locator Type is not supported " + locatortype)
 
-    def find_element(self,locator, locatortype= "id"):
+    def get_element(self, locator, locatortype="id"):
         byType = self.by_type(locatortype)
-        element = self.driver.find_element(byType,locator)
+        element = self.driver.find_element(byType, locator)
         return element
 
     def sendKeys(self, message,locator=None, locatortype=None, element=None):
         if element is None :
-            element = self.find_element(locator=locator,locatortype=locatortype)
+            element = self.get_element(locator=locator, locatortype=locatortype)
         element.send_keys(message)
 
 
     def timetosleep(self, timetosleep=10):
         time.sleep(timetosleep)
 
-    def screenshots(self,screenshotsfolder):
-        self.driver.save_screenshot(screenshotsfolder)
 
-    def waitforelementvisible_hidden_clickable(self,element=None,locator=None,
-                                               locatortype=None, visible = None, hidden =None,clickable=None):
+    def waitForActionsOnElement(self,timeout=10, pollFrequency=0.5):
+        try:
+            wait = wdw(self.driver, timeout=timeout, poll_frequency=pollFrequency,
+                                 ignored_exceptions=[NoSuchElementException,
+                                                     ElementNotVisibleException,
+                                                     ElementNotSelectableException])
+            # element = wait.until(EC.element_to_be_clickable((byType, locator)))
 
-        if element is None:
-            element=self.find_element(locator=locator, locatortype= locatortype)
-        wait = wdw(self.driver, 10, poll_frequency=1,
-                             ignored_exceptions=[NoSuchElementException,
-                                                 ElementNotVisibleException,
-                                                 ElementNotSelectableException])
-        if hidden is not None:
-            wait.until(EC.invisibility_of_element_located(element))
-        if visible is not None:
-            wait.until(EC.visibility_of_element_located(element))
+        except:
+            print('Error while wait for the element.')
+        return wait
+
+        # if hidden is not None:
+        #     wait.until(EC.invisibility_of_element_located(element))
+        # if visible is not None:
+        #     wait.until(EC.visibility_of_element_located(element))
         # if clickable is not None:
         #     wait.until(EC.element_to_be_clickable(element))
         #     self.driver.click(element)
 
 
+    def waitForElementToDisappear(self,locator,locatorType='id',timeout=10,element=None):
+        if element is None:
+            element=self.get_element(locator=locator,locatortype=locatorType)
+        wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
+        wait.until(EC.invisibility_of_element_located(element))
 
+    def waitForElementToVisible(self,locator,locatorType='id',timeout=10,element=None):
+        if element is None:
+            element=self.get_element(locator=locator,locatortype=locatorType)
+        wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
+        wait.until(EC.visibility_of_element_located(element))
 
-
-
+    def waitForElementToClickOn(self,locator,locatorType='id',timeout=10):
+        wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
+        byType=self.by_type(locatortype=locatorType)
+        element=wait.until(EC.element_to_be_clickable((byType,locator)))
+        element.click()
 
 
 
