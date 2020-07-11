@@ -1,9 +1,11 @@
 from Pages_LOB.LoginPage import LoginPage
 from Tests.TestData import TestData as TD
 from Documents.Configfile.GetDrivers import GetDriverInstance
+import pytest
+import unittest
 
 
-class Test_LoginPage():
+class tests_LoginPage():
 
     def __init__(self):
         obj_GetDriverInstance = GetDriverInstance(browser="firefox")
@@ -31,8 +33,3 @@ class Test_LoginPage():
         #invalid user name and password
         self.obj_login.login(userName=TD.InValidUsername,password=TD.InValidPassword)
         result=self.obj_login.verifyLoginFailed()
-
-
-
-obj_TestLoginPage=Test_LoginPage()
-obj_TestLoginPage.TC1_ValidLogin()

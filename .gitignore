@@ -1,11 +1,4 @@
 /.idea/Kni_Insurance.iml
-/Utilities/__init__.py
-/SeleniumActions/__init__.py
-/Documents/Configfile/__init__.py
-/Pages_LOB/HomeownersLOB/__init__.py
-/Tests/test_Homewoners_LOB/__init__.py
-/Tests/__init__.py
-/Pages_LOB/__init__.py
 /.idea/modules.xml
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/vcs.xml

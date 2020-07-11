@@ -38,10 +38,12 @@ class LoginPage():
                                           locatortype=self.lp_password_locatorType,
                                           message=password)
     def clickOnLoginButton(self):
-        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.lp_LoginButton_locator,locatorType=self.lp_password_locatorType)
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.lp_LoginButton_locator,
+                                                         locatorType=self.lp_password_locatorType)
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.lp_spinner_locator,locatorType=self.lp_spinner_locatorType)
+        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.lp_spinner_locator,
+                                                           locatorType=self.lp_spinner_locatorType)
 
     def goToLoginPage(self):
         self.driver.get(self.url_HomePage)
