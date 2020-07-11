@@ -1,18 +1,22 @@
 from Pages_LOB.LoginPage import LoginPage
-from Tests.TestData import TestData as TD
+from Tests.testData import TestData as TD
 from Documents.Configfile.GetDrivers import GetDriverInstance
 import pytest
 import unittest
 
 
-class tests_LoginPage():
+class tests_LoginPage(unittest.TestCase):
 
-    def __init__(self):
-        obj_GetDriverInstance = GetDriverInstance(browser="firefox")
-        self.driver = obj_GetDriverInstance.DriverInstance()
-        self.obj_login=LoginPage(self.driver)
+    obj_GetDriverInstance = GetDriverInstance(browser="firefox")
+    driver = obj_GetDriverInstance.DriverInstance()
+    obj_login = LoginPage(driver)
 
-    def TC1_ValidLogin(self):
+    # def __init__(self):
+    #     obj_GetDriverInstance = GetDriverInstance(browser="firefox")
+    #     self.driver = obj_GetDriverInstance.DriverInstance()
+    #     self.obj_login=LoginPage(self.driver)
+
+    def test_TC1_ValidLogin(self):
         self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
         result=self.obj_login.verifyLoginSuceesful()
 
