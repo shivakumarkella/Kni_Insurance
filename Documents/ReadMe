@@ -4,7 +4,16 @@ Start Date - 06/07/2020
 To get the project - git clone https://github.com/shivakumarkella/Kni_Insurance.git
 Username :
 password :
-*************************************
+Set up the Environment in the environment Variable with the project URL used for Clone
+***********************************************************
 Steps:
 1. Create a Driver class
 2.
+
+
+************************************************************
+1. The classes and methods used in the testcase_page must start with test_"classname" and test_"method"
+2. Always import the unitest.testcase packages at the classlevels/Inhert them in the classes created.
+3. Never Use the __init__ in the testcase_page file, instaed declear them as the global variable if needed
+
+
