@@ -12,20 +12,26 @@ class Test_LoginPage():
 
     def TC1_ValidLogin(self):
         self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
+        result=self.obj_login.verifyLoginSuceesful()
 
-    # def TC2_InvalidLogin(self):
-    #     #Valid user Name , Invalid Password
-    #     self.obj_login.login(userName=TD.ValidUsername,password=TD.InValidPassword)
-    #
-    #
-    # def TC3_InvalidLogin(self):
-    #     #invalid user name , Valid Password
-    #     self.obj_login.login(userName=TD.InValidUsername,password=TD.ValidPassword)
-    #
-    #
-    # def TC4_InvalidLogin(self):
-    #     #invalid user name and password
-    #     self.obj_login.login(userName=TD.InValidUsername,password=TD.InValidPassword)
+
+    def TC2_InvalidLogin(self):
+        #Valid user Name , Invalid Password
+        self.obj_login.login(userName=TD.ValidUsername,password=TD.InValidPassword)
+        result=self.obj_login.verifyInvalidUsername()
+
+
+    def TC3_InvalidLogin(self):
+        #invalid user name , Valid Password
+        self.obj_login.login(userName=TD.InValidUsername,password=TD.ValidPassword)
+        result = self.obj_login.verifyInvalidUsername()
+
+
+    def TC4_InvalidLogin(self):
+        #invalid user name and password
+        self.obj_login.login(userName=TD.InValidUsername,password=TD.InValidPassword)
+        result=self.obj_login.verifyLoginFailed()
+
 
 
 obj_TestLoginPage=Test_LoginPage()
