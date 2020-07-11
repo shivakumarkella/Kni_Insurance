@@ -65,15 +65,6 @@ class SeleniumActions():
             print('Error while wait for the element.')
         return wait
 
-        # if hidden is not None:
-        #     wait.until(EC.invisibility_of_element_located(element))
-        # if visible is not None:
-        #     wait.until(EC.visibility_of_element_located(element))
-        # if clickable is not None:
-        #     wait.until(EC.element_to_be_clickable(element))
-        #     self.driver.click(element)
-
-
     def waitForElementToDisappear(self,locator,locatorType='id',timeout=10,element=None):
         if element is None:
             element=self.get_element(locator=locator,locatortype=locatorType)
@@ -92,7 +83,14 @@ class SeleniumActions():
         element=wait.until(EC.element_to_be_clickable((byType,locator)))
         element.click()
 
-
+    def isElementPresent(self,locator,locatorType='id',timeout=10):
+        wait=self.waitForActionsOnElement()
+        byType=self.by_type(locatortype=locatorType)
+        element=wait.until(EC.presence_of_element_located((byType,locator)))
+        if element is not None:
+            return True
+        else:
+            return False
 
 
 
