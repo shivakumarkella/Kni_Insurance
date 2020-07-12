@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 class GetDriverInstance():
-    def __init__(self,browser="Chrome"):
+    def __init__(self,browser):
         self.browser = browser.lower()
 
     def DriverInstance(self):

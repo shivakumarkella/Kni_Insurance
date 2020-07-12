@@ -15,5 +15,8 @@ Steps:
 1. The classes and methods used in the testcase_page must start with test_"classname" and test_"method"
 2. Always import the unitest.testcase packages at the classlevels/Inhert them in the classes created.
 3. Never Use the __init__ in the testcase_page file, instaed declear them as the global variable if needed
+*********************************88
 
+1. conftest python file always should be placed in where we written the test case files at parent level
+2. must and should we have the filename as conftest.py to write the configuration
 
