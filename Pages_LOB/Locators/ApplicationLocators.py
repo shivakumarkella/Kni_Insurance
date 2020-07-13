@@ -1,7 +1,7 @@
 
 
 
-Loginpage = {"URL":{"URL":"https://stingray.knigrp.com/login.max?preprocess=true"},
+Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
             "LoginButton":{"Name":"submit"},
@@ -12,5 +12,8 @@ Loginpage = {"URL":{"URL":"https://stingray.knigrp.com/login.max?preprocess=true
              }
 
 HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
-                "HOFullQuoteLink":{"link_text":"Full Quote - HO"}
-             }
+                "HOFullQuoteLink":{"link_text":"Full Quote - HO"},
+                "HOSelectAgency":{"xpath":'//option[contains(text(),"Kentucky National Home Office - 17KN (2709, Old Ro")]'},
+                "HOGender":{"id":"hPQ_Gender1"},
+                "HON/A":{"id":"component EditorRadio"}}
+
