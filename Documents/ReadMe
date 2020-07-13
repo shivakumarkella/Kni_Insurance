@@ -17,6 +17,8 @@ Steps:
 3. Never Use the __init__ in the testcase_page file, instaed declear them as the global variable if needed
 *********************************88
 
-1. conftest python file always should be placed in where we written the test case files at parent level
-2. must and should we have the filename as conftest.py to write the configuration
+1. conftest python file always should be placed in the testcase file which should be at the ParentLevel.
+2. "conftest.py" by default this should be the Name of the configuration file under
+the testcase folder/Testcase file which we are executing
+
 
