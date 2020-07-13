@@ -1,5 +1,6 @@
 from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
+from Pages_LOB.HoFullQuotePage import HoFullQuotePage
 
 
 
@@ -70,4 +71,6 @@ class LoginPage():
         self.enterPassword(password)
         self.clickOnLoginButton()
         self.completeStingraySpinning()
-        # self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOFullQuoteLink_locator,locatorType=self.HOFullQuoteLink_locatorType)
+
+        obj=HoFullQuotePage(self.driver)
+        obj.fillDetailsForHoFullQuote()

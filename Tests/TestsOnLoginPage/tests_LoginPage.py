@@ -1,9 +1,9 @@
 from Pages_LOB.LoginPage import LoginPage
 from Tests.testData import TestData as TD
-from Documents.Configfile.GetDrivers import GetDriverInstance
 import pytest
 import unittest
 from TestResults.customLogger import customLogger
+
 
 @pytest.mark.usefixtures("oneTimeSetUp")
 class tests_LoginPage(unittest.TestCase):
@@ -14,10 +14,12 @@ class tests_LoginPage(unittest.TestCase):
         self.obj_login = LoginPage(self.driver)
 
 
-    # @pytest.mark.run(order=2)
-    # def testCase1_ValidLogin(self):
-    #     self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
-    #     result=self.obj_login.verifyLoginSuceesful()
+    @pytest.mark.run(order=1)
+    def testCase1_ValidLogin(self):
+        self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
+
+        # result=self.obj_login.verifyLoginSuceesful()
+
 
 
     # @pytest.mark.run(order=3)
@@ -32,8 +34,8 @@ class tests_LoginPage(unittest.TestCase):
     #     self.obj_login.login(userName=TD.InValidUsername,password=TD.ValidPassword)
     #     result = self.obj_login.verifyInvalidUsername()
 
-    @pytest.mark.run(order=1)
-    def testCase4_InvalidLogin(self):
-        #invalid user name and password
-        self.obj_login.login(userName=TD.InValidUsername,password=TD.InValidPassword)
-        result=self.obj_login.verifyLoginFailed()
+    # @pytest.mark.run(order=1)
+    # def testCase4_InvalidLogin(self):
+    #     #invalid user name and password
+    #     self.obj_login.login(userName=TD.InValidUsername,password=TD.InValidPassword)
+    #     result=self.obj_login.verifyLoginFailed()

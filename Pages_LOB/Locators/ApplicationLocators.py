@@ -11,3 +11,6 @@ Loginpage = {"URL":{"URL":"https://stingray.knigrp.com/login.max?preprocess=true
             "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"}
              }
 
+HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
+                "HOFullQuoteLink":{"link_text":"Full Quote - HO"}
+             }
