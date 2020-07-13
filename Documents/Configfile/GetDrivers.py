@@ -16,6 +16,7 @@ class GetDriverInstance():
             # driver=webdriver.Chrome(executable_path="C:\\Users\\Sharat\\Workspace_python\\drivers\\chromedriver.exe")
         driver.maximize_window()
         driver.implicitly_wait(2)
+
         return driver
 
 

@@ -70,4 +70,5 @@ class LoginPage():
         self.enterPassword(password)
         self.clickOnLoginButton()
         self.completeStingraySpinning()
-        # self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOFullQuoteLink_locator,locatorType=self.HOFullQuoteLink_locatorType)
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOFullQuoteLink_locator,locatorType=self.HOFullQuoteLink_locatorType)
+        self.obj_SeleniumActions.handlingalert()
