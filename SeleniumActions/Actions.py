@@ -71,6 +71,7 @@ class SeleniumActions():
             wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
             wait.until(EC.invisibility_of_element_located(element))
 
+
     def waitForElementToVisible(self,locator,locatorType='id',timeout=10,element=None):
         try:
             if element is None:
@@ -104,20 +105,32 @@ class SeleniumActions():
         else:
             return False
 
-#  Dropdown
-#  If user provides Locatortyp as id we need to consider this
-# else we should allow the user to pass the locatortype
 
 
-    def selectDropdown(self,locator, locatorType, element):
+    def selectDropdown(self,locator, locatorType,element=None):
         if element is None :
             element = self.get_element(locator=locator, locatortype=locatorType)
-            element.click(element)
+            element.click()
         else:
-            element = self.get_element()
+            element.click()
 
-#switch to Handel
-# Accept method for Ok, Java algorithm code
+
+
+    def selectRadiobutton(self,locator,locatorType,element=None):
+        if element is None:
+            element = self.get_element(locator=locator, locatortype=locatorType)
+            element.click()
+        else:
+            element.click()
+
+
+    def selectCheckbox(self,locator,locatorType,element=None):
+        if element is None:
+            element =self.get_element(locator=locator, locatortype=locatorType)
+            element.click()
+        else:
+            element.click()
+
 
     def handlingalert(self):
        checkalert= self.driver.switch_to.alert
