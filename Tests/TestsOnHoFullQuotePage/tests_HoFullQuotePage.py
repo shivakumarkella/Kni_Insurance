@@ -1,17 +1,13 @@
 from Pages_LOB.HoFullQuotePage import HoFullQuotePage
 from Tests.testData import TestData as TD
-import pytest
-import unittest
 from TestResults.customLogger import customLogger
 
 
+class tests_HoFullQuotePage():
 
-class tests_HoFullQuotePage(unittest.TestCase):
-
-
-    def thisclassSetup(self):
+    def __init__(self,driver):
         self.log = customLogger()
-        self.obj_HoFullQuotePage = HoFullQuotePage(self.driver)
+        self.obj_HoFullQuotePage = HoFullQuotePage(driver)
 
 
     def testCase1_ValidDetailsOnHoFQ(self):

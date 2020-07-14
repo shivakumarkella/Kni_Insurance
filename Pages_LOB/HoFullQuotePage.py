@@ -1,8 +1,6 @@
 from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
 
-
-
 class HoFullQuotePage():
 
     #Locators
