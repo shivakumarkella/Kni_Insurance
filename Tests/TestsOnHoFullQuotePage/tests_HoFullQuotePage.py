@@ -11,4 +11,7 @@ class tests_HoFullQuotePage():
 
 
     def testCase1_ValidDetailsOnHoFQ(self):
-        self.obj_HoFullQuotePage.fillDetailsForHoFullQuote()
+        self.obj_HoFullQuotePage.fillDetailsForHoFullQuote(TD.FirstName)
+
+
+
