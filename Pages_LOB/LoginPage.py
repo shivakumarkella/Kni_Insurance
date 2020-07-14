@@ -42,6 +42,7 @@ class LoginPage():
         self.obj_SeleniumActions.waitForElementToClickOn(locator=self.lp_LoginButton_locator,
                                                          locatorType=self.lp_password_locatorType)
 
+
     def completeStingraySpinning(self):
         self.obj_SeleniumActions.waitForElementToDisappear(locator=self.lp_spinner_locator,
                                                            locatorType=self.lp_spinner_locatorType)
@@ -71,6 +72,3 @@ class LoginPage():
         self.enterPassword(password)
         self.clickOnLoginButton()
         self.completeStingraySpinning()
-
-        obj=HoFullQuotePage(self.driver)
-        obj.fillDetailsForHoFullQuote()

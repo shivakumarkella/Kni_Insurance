@@ -5,6 +5,8 @@ To get the project - git clone https://github.com/shivakumarkella/Kni_Insurance.
 Username :Shivakumarkella
 password :Shiva@9000
 Set up the Environment in the environment Variable with the project URL used for Clone
+
+
 ***********************************************************
 Steps:
 1. Create a Driver class
@@ -20,5 +22,8 @@ Steps:
 1. conftest python file always should be placed in the testcase file which should be at the ParentLevel.
 2. "conftest.py" by default this should be the Name of the configuration file under
 the testcase folder/Testcase file which we are executing
+
+
+
 
 

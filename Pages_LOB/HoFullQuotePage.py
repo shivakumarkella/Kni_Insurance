@@ -39,11 +39,36 @@ class HoFullQuotePage():
     HOPropertyState_locatorType = list(Locator['HOState'].items())[0][0]
     HOZip_locator = list(Locator['HOZip'].items())[0][1]
     HOZip_locatorType = list(Locator['HOZip'].items())[0][0]
+    HOSuggestion_locator = list(Locator['HOSuggestionBox'].items())[0][1]
+    HOSuggestion_locatorType = list(Locator['HOSuggestionBox'].items())[0][0]
+    HOEmptybox_locator = list(Locator['HOEmptyBox'].items())[0][1]
+    HOEmptybox_locatorType =list(Locator['HOEmptyBox'].items())[0][0]
+    HOApplicantContinue_locator = list(Locator['HOApplicantContinue'].items())[0][1]
+    HOApplicantContinue_locatorType =list(Locator['HOApplicantContinue'].items())[0][0]
+    HOAddressspinner_locator = list(Locator['HOAddressSpinnerOverlay'].items())[0][1]
+    HOAddressspinner_locatorType = list(Locator['HOAddressSpinnerOverlay'].items())[0][0]
 
-    # HOspinner_locator = list(Locator['SpinnerOverlay'].items())[0][1]
-    # HOspinner_locatorType = list(Locator['SpinnerOverlay'].items())[0][0]
+    # Credit Page/Tab
+    HOCreditContinueButton_locator =list(Locator['HOCreditContinue'].items())[0][1]
+    HOCreditContinueButton_locatorType = list(Locator['HOCreditContinue'].items())[0][0]
 
+    # Add.info Page/Tab
+    HOYearsAtCurrentAddress_locator = list(Locator["HOYearsAtCurrentAddress"].items())[0][1]
+    HOYearsAtCurrentAddress_locatorType = list(Locator["HOYearsAtCurrentAddress"].items())[0][0]
+    HOFirstTimeBuyer_locator =list(Locator["HOFirstTimeHomeBuyer"].items())[0][1]
+    HOFirstTimeBuyer_locatorType = list(Locator["HOFirstTimeHomeBuyer"].items())[0][0]
+    HOAddinfoContinue_locator =list(Locator["HOAddinfoContinueButton"].items())[0][1]
+    HOAddinfoContinue_locatorType = list(Locator["HOAddinfoContinueButton"].items())[0][0]
 
+    # Losses Page/Tab
+    HOConstructionType_locator = list(Locator["HOConstructionClase"].items())[0][1]
+    HOConstructionType_locatorType = list(Locator["HOConstructionClase"].items())[0][0]
+    HONumberofFamilies_locator = list(Locator["HONumberOfFamilies"].items())[0][1]
+    HONumberofFamilies_locatorType = list(Locator["HONumberOfFamilies"].items())[0][0]
+    HOUsage_locator = list(Locator["HOUsage"].items())[0][1]
+    HOUsage_locatorType = list(Locator["HOUsage"].items())[0][0]
+    HOLossesContinue_locator = list(Locator["HOLossesContinueButton"].items())[0][1]
+    HOLossesContinue_locatorType = list(Locator["HOLossesContinueButton"].items())[0][0]
 
 
 
@@ -60,7 +85,7 @@ class HoFullQuotePage():
                                                          locatorType=self.HOFullQuoteLink_locatorType)
 
     def selectAgency(self):
-        self.obj_SeleniumActions.selectDropdown(locator=self.HOAgecny_locator,
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOAgecny_locator,
                                                          locatorType=self.HOAgecny_locatorType)
 
     def selectRBforSecondInsuredPerson(self):
@@ -120,41 +145,95 @@ class HoFullQuotePage():
         self.obj_SeleniumActions.sendKeys(locator=self.HOZip_locator,
                                           locatortype=self.HOZip_locatorType, message=propertyZip)
 
-    # def completeStingraySpinning(self):
-    #     self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOspinner_locator,
-    #                                                        locatorType=self.HOspinner_locatorType)
+    def suggestionBox(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOSuggestion_locator,
+                                                         locatorType=self.HOSuggestion_locatorType)
+
+    def emptyBox(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOEmptybox_locator,
+                                                         locatorType=self.HOEmptybox_locatorType)
+
+    def completeStingraySpinning(self):
+        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOAddressspinner_locator,
+                                                            locatorType=self.HOAddressspinner_locatorType)
+
+    def clickonApplicantContinuebutton(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOApplicantContinue_locator,
+                                                         locatorType=self.HOApplicantContinue_locatorType)
+    #  Credit Tab/Page
+    def clickonCreditContinuebutton(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOCreditContinueButton_locator,
+                                                         locatorType=self.HOCreditContinueButton_locatorType)
+
+    #  Add.Info tab/Page
+
+    def yearsatcurrentaddress(self,years):
+        self.obj_SeleniumActions.sendKeys(locator=self.HOYearsAtCurrentAddress_locator,
+                                          locatortype=self.HOYearsAtCurrentAddress_locatorType, message=years)
+
+    def selectRBforFirsttimeBuyer(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOFirstTimeBuyer_locator,
+                                                         locatorType=self.HOFirstTimeBuyer_locatorType)
+
+    def clickonAddinfoContinuebutton(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOAddinfoContinue_locator,
+                                                         locatorType=self.HOAddinfoContinue_locatorType)
+
+    #  Losses Page/Tab
+
+    def selectConstructiontype(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOConstructionType_locator,
+                                                         locatorType=self.HOConstructionType_locatorType)
+
+    def selectNumberofFamilies(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HONumberofFamilies_locator,
+                                                         locatorType=self.HONumberofFamilies_locatorType)
+
+    def selectUsage(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOUsage_locator,
+                                                         locatorType=self.HOUsage_locatorType)
+
+    def clickonLossesContinueButton(self):
+        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOLossesContinue_locator,
+                                                         locatorType=self.HOLossesContinue_locatorType)
 
 
 
 
 
 
-
-
-
-
-
-    def fillDetailsForHoFullQuote(self,FirstName="Test",LastName="Test",SSN="123321000",DOB="10/31/1990",Email="test@test.com",
-                                  propertyAddress1="171 Test Road",propertyAddress2="Not Required",propertyCity="MOUNT VERNON",
-                                  propertyState="KY",
-                                  propertyZip="40456-7345"):
+    def fillDetailsForHoFullQuote(self,FirstName,LastName,SSN,DOB,Email,propertyAddress1,propertyAddress2,propertyCity,
+                                  propertyState,propertyZip,YearsAtCurrentAddress):
         self.gotoHoFullQuotePage()
         self.quoteValidFor60Days()
         self.selectAgency()
         self.selectGender()
         self.selectRBforSecondInsuredPerson()
-        self.firstname(firstname=FirstName)
-        self.lastname(lastname=LastName)
-        self.ssn(ssn=SSN)
-        self.dobofFirstInsuredPerson(dob=DOB)
-        self.emailAddress(email=Email)
+        self.firstname(FirstName)
+        self.lastname(LastName)
+        self.ssn(SSN)
+        self.dobofFirstInsuredPerson(DOB)
+        self.emailAddress(Email)
         self.selectMailingAddress()
         self.selectOccupidBy()
-        self.propertyAddress1(propertyAddress1=propertyAddress1)
-        self.propertyAddress2(propertyAddress2=propertyAddress2)
-        self.propertyCity(propertyCity=propertyCity)
-        self.propertyState(propertyState=propertyState)
-        self.propertyZip(propertyZip=propertyZip)
+        self.propertyAddress1(propertyAddress1)
+        self.propertyAddress2(propertyAddress2)
+        self.propertyCity(propertyCity)
+        self.propertyState(propertyState)
+        self.propertyZip(propertyZip)
+        self.suggestionBox()
+        self.emptyBox()
+        self.completeStingraySpinning()
+        self.clickonApplicantContinuebutton()
+        self.clickonCreditContinuebutton()
+        self.yearsatcurrentaddress(YearsAtCurrentAddress)
+        self.selectRBforFirsttimeBuyer()
+        self.clickonAddinfoContinuebutton()
+        self.selectConstructiontype()
+        self.selectNumberofFamilies()
+        self.selectUsage()
+        self.clickonLossesContinueButton()
+
 
 
 
