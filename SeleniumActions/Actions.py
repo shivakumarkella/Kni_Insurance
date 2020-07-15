@@ -7,7 +7,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By as BY
-
+from selenium.webdriver.support.ui import Select
 import time
 from selenium.webdriver.support.ui import WebDriverWait as wdw
 from selenium.webdriver.support import expected_conditions as EC
@@ -108,12 +108,11 @@ class SeleniumActions():
 
 
 
-    def selectDropdown(self,locator, locatorType,element=None):
-        if element is None :
-            element = self.get_element(locator=locator, locatortype=locatorType)
-            element.click()
-        else:
-            element.click()
+    def selectDropdown(self,locator, locatorType,element=None,SelectValue=None):
+        element = Select(self.get_element(locatortype=locatorType,
+                                           locator=locator))
+        element.select_by_value(SelectValue)
+
 
 
 
