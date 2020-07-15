@@ -91,6 +91,7 @@ class SeleniumActions():
             wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
             byType=self.by_type(locatortype=locatorType)
             element=wait.until(EC.element_to_be_clickable((byType,locator)))
+
             element.click()
         except:
             print('Waited for' + locator + 'to be clicked, but ' + locatorType + 'not found')
@@ -135,6 +136,25 @@ class SeleniumActions():
     def handlingalert(self):
        checkalert= self.driver.switch_to.alert
        checkalert.accept()
+
+
+    def waitForPageLoaded(self):
+        wait=self.waitForActionsOnElement(timeout=30)
+        return str((self.driver).execute_script("return document.readyState"))=="complete"
+
+
+    def LoadtheDomCompletely(self):
+        try:
+            i=1
+            while(i==1):
+                isLoaded=self.waitForPageLoaded()
+                if isLoaded==True:
+                    i=0
+        except:
+            print('time out , page not loaded yet')
+
+
+
 
 
 
