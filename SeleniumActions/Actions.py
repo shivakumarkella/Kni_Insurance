@@ -137,21 +137,6 @@ class SeleniumActions():
        checkalert.accept()
 
 
-    def waitForDomtoLoad(self,locator, locatorType="id"):
-        wait = self.waitForActionsOnElement(timeout=10,pollFrequency=0.5)
-        byType = self.by_type(locatortype=locatorType)
-        element = wait.until(EC.visibility_of_all_elements_located((byType,locator)))
-        if element is not None :
-            print("All the Elements in the DOM loaded")
-        else :
-            print("Dom Not loaded Completely "+ str(element))
-
-
-
-
-
-
-
 
 
 
