@@ -5,17 +5,17 @@ Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
             "LoginButton":{"Name":"submit"},
-            "HOFullQuoteLink":{"link_text":"Full Quote - HO"},
+            "HOFullQuoteLink":{"Xpath":"//table[@class='TableMenu']//a[contains(text(),'Full Quote - HO')]"},
             "SpinnerOverlay":{"id":"spinnerOverlay"},
             "InvalidUsername":{"Xpath":"//div[contains(text(),'Invalid Login - Your user account will be locked o')]"},
             "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"}
              }
 
 HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
-                "HOFullQuoteLink":{"link_text":"Full Quote - HO"},
+                "HOFullQuoteLink":{"xpath":"//table[@class='TableMenu']//a[contains(text(),'Full Quote - HO')]"},
                 "HOSelectAgency":{"xpath":"//option[222]"},
-                "HOGender":{"xpath":"//select[@id='hPQ_Gender1']//option[contains(text(),'Male')]"},
-                "HONA":{"xpath":"//div[@class='component DynamicContainer']//div[9]//input[1]"},
+                "HOGender":{"xpath":"//select[@id='hPQ_Gender1']//option[2]"},
+                "HONA":{"xpath":"//div[@id='rightColumn']//div//div[9]//input[1]"},
                 "HOFirstName":{"id":"hPQ_FirstName"},
                 "HOLastName":{"id":"hPQ_LastName"},
                 "HOSsn":{"id":"hPQ_SSN"},
@@ -32,6 +32,8 @@ HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
                 "HOEmptyBox":{"xpath":"//div[6]//a[1]//span[1]"},
                 "HOApplicantContinue":{"id":"Continue"},
                 "HOAddressSpinnerOverlay":{"id":"spinnerOverlay"},
+                "MMInsuredManagement":{"xpath":"//a[contains(text(),'Insured Login Management')]"},
+                ""
                  # Credit Page/Tab
                 "HOCreditContinue":{"id":"Continue"},
                 # Add.info

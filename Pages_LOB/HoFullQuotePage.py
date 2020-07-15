@@ -47,6 +47,9 @@ class HoFullQuotePage():
     HOApplicantContinue_locatorType =list(Locator['HOApplicantContinue'].items())[0][0]
     HOAddressspinner_locator = list(Locator['HOAddressSpinnerOverlay'].items())[0][1]
     HOAddressspinner_locatorType = list(Locator['HOAddressSpinnerOverlay'].items())[0][0]
+    MMInsuredManagement_locator = list(Locator['MMInsuredManagement'].items())[0][1]
+    MMInsuredManagement_locatorType = list(Locator['MMInsuredManagement'].items())[0][0]
+
 
     # Credit Page/Tab
     HOCreditContinueButton_locator =list(Locator['HOCreditContinue'].items())[0][1]
@@ -83,6 +86,10 @@ class HoFullQuotePage():
     def gotoHoFullQuotePage(self):
         self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOFullQuoteLink_locator,
                                                          locatorType=self.HOFullQuoteLink_locatorType)
+
+    def waitforContinueButtonToLoad(self):
+        self.obj_SeleniumActions.waitForDomtoLoad(locator=self.HOApplicantContinue_locator,
+                                                  locatorType=self.HOApplicantContinue_locatorType)
 
     def selectAgency(self):
         self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOAgecny_locator,
@@ -198,14 +205,22 @@ class HoFullQuotePage():
                                                          locatorType=self.HOLossesContinue_locatorType)
 
 
+    def waitforMainMenuToload(self):
+        self.obj_SeleniumActions.waitForDomtoLoad(locator=self.MMInsuredManagement_locator,
+                                                  locatorType=self.MMInsuredManagement_locatorType)
+
+
+
 
 
 
 
     def fillDetailsForHoFullQuote(self,FirstName,LastName,SSN,DOB,Email,propertyAddress1,propertyAddress2,propertyCity,
                                   propertyState,propertyZip,YearsAtCurrentAddress):
+        self.waitforMainMenuToload()
         self.gotoHoFullQuotePage()
         self.quoteValidFor60Days()
+        self.waitforContinueButtonToLoad()
         self.selectAgency()
         self.selectGender()
         self.selectRBforSecondInsuredPerson()
