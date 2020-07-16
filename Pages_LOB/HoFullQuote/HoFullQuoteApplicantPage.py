@@ -191,12 +191,13 @@ class HoFullQuoteApplicantPage():
         self.propertyZip(propertyZip)
         self.suggestionBox()
         self.completeStingraySpinning()
+        self.emptyBox()
         self.obj_SeleniumActions.sleepForWhile(sleepTime=3)
         countySelectedValue=self.countySelectedValue()
         if countySelectedValue=='-1':
             self.selectCountybyValue(selectvalue=selctcounty)
-        else:
-            self.emptyBox()
+        self.emptyBox()
         self.completeStingraySpinning()
         self.clickonApplicantContinuebutton()
         self.completeStingraySpinning()
+        # self.obj_SeleniumActions.sleepForWhile(5)

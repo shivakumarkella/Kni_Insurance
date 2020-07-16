@@ -1,7 +1,7 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=11
+excelRowNumber=115
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 
@@ -21,7 +21,7 @@ SSN = int(list(data[dataRow].items())[2][1])
 # DOB= dt.datetime.strptime(str(int(list(data[dataRow].items())[3][1])),'%m%d%Y').date()
 selectgender = list(data[dataRow].items())[4][1]
 
-StreetNumber = int(list(data[dataRow].items())[5][1])
+StreetNumber = list(data[dataRow].items())[5][1]
 StreetName = list(data[dataRow].items())[6][1]
 StreetBluff = list(data[dataRow].items())[7][1]
 propertyAddress1=str(StreetNumber)+' '+str(StreetName)+' '+str(StreetBluff)
@@ -31,6 +31,7 @@ propertyAddress1=str(StreetNumber)+' '+str(StreetName)+' '+str(StreetBluff)
 #     aptNumber=' '
 # else:
 #     aptNumber=NumberaApt
+
 
 propertyCity = list(data[dataRow].items())[9][1]
 propertyState = list(data[dataRow].items())[10][1]
@@ -52,21 +53,24 @@ ValidUsername = "xlsol"
 ValidPassword = "1234"
 InValidPassword = "8592212983"
 InValidUsername = "brxyz"
-
+# FirstName="Test"
+# LastName="Test"
+# SSN="123321115"
 DOB="10/31/1990"
 Email="test@test.com"
-
+# propertyAddress1="190 Stump Bluff	Rd"
 propertyAddress2="     "
-
-propertyZip="42101"
+# propertyCity="Bowling Green"
+# propertyState="KY"
+propertyZip="42102"
 YearsAtCurrentAddress ="5"
 selectvalueforagency="486"
 selectCounty ="67"
-
+# selectvalueforATC = "1"
+# selectgender = "M"
 
 
 location="C:\\Users\\Sharat\\Workspace_python\\Kni_Insurance\\TestResults\\Screenshots"
-
 AutomationFileName = 'automation'
 pathToSaveAutomationLog = "TestResults//DocsScreenShotsLogFiles//"
 

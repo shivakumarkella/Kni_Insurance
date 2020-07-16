@@ -64,7 +64,8 @@ class SeleniumActions():
             wait = wdw(self.driver, timeout=timeout, poll_frequency=pollFrequency,
                                  ignored_exceptions=[NoSuchElementException,
                                                      ElementNotVisibleException,
-                                                     ElementNotSelectableException])
+                                                     ElementNotSelectableException,TimeoutException])
+
             # element = wait.until(EC.element_to_be_clickable((byType, locator)))
 
         except:
@@ -94,10 +95,13 @@ class SeleniumActions():
 
     def waitForElementToClickOn(self,locator,locatorType='id',timeout=10):
         try:
+            element = None
             wait=self.waitForActionsOnElement(timeout=timeout,pollFrequency=1)
             byType=self.by_type(locatortype=locatorType)
             element=wait.until(EC.element_to_be_clickable((byType,locator)))
-            element.click()
+            if element is not None:
+               element.click()
+
         except:
             print('Waited for' + locator + 'to be clicked, but ' + locatorType + 'not found')
 
@@ -123,9 +127,12 @@ class SeleniumActions():
 
 
 
+
+
     def selectRadiobutton(self,locator,locatorType,element=None):
         if element is None:
             element = self.get_element(locator=locator, locatortype=locatorType)
+            element.click()
             element.click()
         else:
             element.click()
@@ -170,7 +177,6 @@ class SeleniumActions():
 
     def getListOFWindows(self):
         handles=self.driver.window_handles
-
         return handles
 
     def sleepForWhile(self,sleepTime=5):
@@ -191,16 +197,33 @@ class SeleniumActions():
     def scrollDown(self,height=0,width=0):
         if height==0 or width==0:
             height,width=self.getTheCurrentWindowSize()
-            scriptForScroll = 'window.scrollBy(0,' + str(height) + ');'
-            self.driver.execute_script("{}".format(scriptForScroll))
+        scriptForScroll = 'window.scrollBy(0,' + str(height) + ');'
+        self.driver.execute_script("{}".format(scriptForScroll))
 
     def scrollUp(self,height=0,width=0):
         if height==0 or width==0:
             height,width=self.getTheCurrentWindowSize()
-            scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
-            self.driver.execute_script("{}".format(scriptForScroll))
+        scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
+        self.driver.execute_script("{}".format(scriptForScroll))
+
+
+    # def selectRBforTandC(self,locator,locatorType,element=None, SelectValue=None):
+    #     element1 = Select(self.get_element(locator=locator, locatortype= locatorType))
+    #     element =element1.select_by_value(SelectValue)
+    #     element.click()
 
 
 
+    # def scrollDown(self):
+    #     self.driver.execute_script("window.scrollBy(0, 1000);")
+    #     time.sleep(2)
+
+
+
+    # def selectRBforTandC(self,locator,locatorType,element=None):
+    #     element = self.driver.ActionChains.double_click(locator=locator, locatorType=locatorType)
+    #     element.click().perform()
+
+    # webdriver.ActionChains.double_click().perform()
 
 

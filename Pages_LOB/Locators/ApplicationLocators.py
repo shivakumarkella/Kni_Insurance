@@ -47,10 +47,10 @@ HoFullQuoteCreditPage = {"SpinnerOverlay":{"id":"spinnerOverlay"},
                         "HOCreditContinue":{"id":"Continue"}}
 #
 #
-# HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},
-#                              "HOYearsAtCurrentAddress":{"id":"hPQ_yrscurrentaddress"},
-#                              "HOFirstTimeHomeBuyer":{"id":"hPQ_NewPurchase"},
-#                              "HOAddinfoContinueButton":{"id":"btnContinue"}}
+HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},
+                             "HOYearsAtCurrentAddress":{"id":"hPQ_yrscurrentaddress"},
+                             "HOFirstTimeHomeBuyer":{"id":"hPQ_NewPurchase"},
+                             "HOAddinfoContinueButton":{"id":"btnContinue"}}
 #
 #
 # HoFullQuoteLosses ={"SpinnerOverlay":{"id":"spinnerOverlay"},

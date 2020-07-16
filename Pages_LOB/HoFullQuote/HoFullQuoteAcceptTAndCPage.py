@@ -21,19 +21,27 @@ class HoFQTandCPage():
     def selectAcceptAgrementRB(self):
         self.obj_SeleniumActions.selectRadiobutton(locator=self.HOAcceptAgreementRB_locator,
                                                    locatorType=self.HOAcceptAgreementRB_locatorType)
+        self.obj_SeleniumActions.sleepForWhile(5)
 
     def clickOnAcceptAgrementContinueButton(self):
         self.obj_SeleniumActions.clickmethod(locator=self.HOAcceptAgreementContinueButton_locator,
                                                          locatorType=self.HOAcceptAgreementContinueButton_locatorType)
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOAddressspinner_locator,
+        self.obj_SeleniumActions.waitForElementToDisappear(timeout=5,locator=self.HOAddressspinner_locator,
                                                             locatorType=self.HOAddressspinner_locatorType)
 
 
 
     def acceptTermsAndCondition(self):
         self.completeStingraySpinning()
-        self.obj_SeleniumActions.sleepForWhile(10)
+        # self.clickOnAcceptAgrementContinueButton()
+        self.obj_SeleniumActions.sleepForWhile(5)
+        self.clickOnAcceptAgrementContinueButton()
+        self.obj_SeleniumActions.sleepForWhile(5)
+        self.obj_SeleniumActions.handlingalert()
+        self.obj_SeleniumActions.sleepForWhile(5)
         self.selectAcceptAgrementRB()
         self.clickOnAcceptAgrementContinueButton()
+        self.obj_SeleniumActions.sleepForWhile(5)
+        # self.clickOnAcceptAgrementContinueButton()
