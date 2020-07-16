@@ -1,7 +1,7 @@
 
 
 
-Loginpage = {"URL":{"URL":"http://10.1.1.13:88/login.max?preprocess=true#"},
+Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
             "LoginButton":{"Name":"submit"},
@@ -30,7 +30,7 @@ HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
                 "HOPropertyCity":{"id":"hPQ_City"},
                 "HOState":{"id":"hPQ_State"},
                 "HOZip":{"id":"hPQ_Zip"},
-                "HOSuggestionBox":{"xpath":"//div[@class='avs-suggestion']"},
+                "HOSuggestionBox":{"xpath":"//div[@class='avs-header']"},
                 "HOEmptyBox":{"xpath":"//div[6]//a[1]//span[1]"},
                 "HOApplicantContinue":{"id":"Continue"},
                 "HOAddressSpinnerOverlay":{"id":"spinnerOverlay"},

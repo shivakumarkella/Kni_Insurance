@@ -1,13 +1,14 @@
 from Pages_LOB.LoginPage.LoginPage import LoginPage
 from Tests.testData import TestData as TD
 from TestResults.customLogger import customLogger
+import logging
 
 
 class tests_LoginPage():
 
 
     def __init__(self,driver):
-        self.log = customLogger()
+        self.log = customLogger(logging.DEBUG)
         self.obj_login = LoginPage(driver)
 
 
@@ -15,6 +16,7 @@ class tests_LoginPage():
     def testCase1_ValidLogin(self):
         self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
         result=self.obj_login.verifyLoginSuceesful()
+
 
 
 
