@@ -1,6 +1,8 @@
 from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
 
+
+
 class HoFullQuoteApplicantPage():
 
     #Locators
@@ -146,9 +148,15 @@ class HoFullQuoteApplicantPage():
                                                          locatorType=self.HOApplicantContinue_locatorType)
 
 
-    def countyNotselectedbyDefault(self,selectvalue):
-        self.obj_SeleniumActions.selectDropdown(locator=self.HOCounty_locator,
-                                                locatorType= self.HOCounty_locatorType,SelectValue=selectvalue)
+
+    def selectCountybyValue(self,selectvalue):
+        self.obj_SeleniumActions.selectDropdown(locatorType=self.HOCounty_locatorType,locator=self.HOCounty_locator,
+                                                SelectValue=selectvalue)
+
+
+    def countySelectedValue(self):
+        selectedValue=self.obj_SeleniumActions.getTheDropDownSelectedValue(locatorType=self.HOCounty_locatorType,locator=self.HOCounty_locator)
+        return selectedValue
 
 
 
@@ -181,34 +189,14 @@ class HoFullQuoteApplicantPage():
         self.propertyAddress2(propertyAddress2)
         self.propertyCity(propertyCity)
         self.propertyState(propertyState)
-        self.completeStingraySpinning()
-        # self.obj_SeleniumActions.tabout()
-        self.completeStingraySpinning()
         self.propertyZip(propertyZip)
-        self.completeStingraySpinning()
         self.suggestionBox()
-        # sleep2-5 seconds
-        # see if COunty Dropdown selected
-        # if county not selected manually select the dropdown
-        # if county selected click on empty box
-
-        self.emptyBox()
+        self.completeStingraySpinning()
+        self.obj_SeleniumActions.sleepForWhile(sleepTime=3)
+        countySelectedValue=self.countySelectedValue()
+        if countySelectedValue=='-1':
+            self.selectCountybyValue(selectvalue=selctcounty)
+        else:
+            self.emptyBox()
         self.completeStingraySpinning()
         self.clickonApplicantContinuebutton()
-        # self.countyNotselectedbyDefault(selctcounty)
-        # self.clickonApplicantContinuebutton()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
