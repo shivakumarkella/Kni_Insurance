@@ -157,10 +157,11 @@ class SeleniumActions():
        A.send_keys(Keys.TAB)
 
 
+    def getTheDropDownSelectedValue(self,locator, locatorType,element=None,SelectValue=None):
+        selectedValue = Select(self.get_element(locatortype=locatorType,
+                                          locator=locator)).first_selected_option.get_attribute("value")
+        return selectedValue
 
-    # def sleepforsometime(self):
-    #     sleep = self.timetosleep(2)
-    #     return sleep
 
 
 
