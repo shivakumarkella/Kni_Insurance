@@ -181,6 +181,25 @@ class SeleniumActions():
         element = self.get_element(locator=locator,locatortype=locatorType)
         element.click()
 
+    def getTheCurrentWindowSize(self):
+        # get the Window size i.e. height and width
+            height = self.driver.execute_script("return window.innerHeight;")
+            width = self.driver.execute_script("return window.innerWidth;")
+            return height,width
+
+
+    def scrollDown(self,height=0,width=0):
+        if height==0 or width==0:
+            height,width=self.getTheCurrentWindowSize()
+            scriptForScroll = 'window.scrollBy(0,' + str(height) + ');'
+            self.driver.execute_script("{}".format(scriptForScroll))
+
+    def scrollUp(self,height=0,width=0):
+        if height==0 or width==0:
+            height,width=self.getTheCurrentWindowSize()
+            scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
+            self.driver.execute_script("{}".format(scriptForScroll))
+
 
 
 
