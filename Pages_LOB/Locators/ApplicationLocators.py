@@ -1,7 +1,7 @@
 
 
 
-Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
+Loginpage = {"URL":{"URL":"http://10.1.1.13:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
             "LoginButton":{"Name":"submit"},
@@ -11,10 +11,12 @@ Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"}
              }
 
+
+
 HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
                 "HOFullQuoteLink":{"xpath":"//table[@class='TableMenu']//a[contains(text(),'Full Quote - HO')]"},
-                "HOSelectAgency":{"xpath":"//option[222]"},
-                "HOGender":{"xpath":"//select[@id='hPQ_Gender1']//option[2]"},
+                "HOSelectAgency":{"id":"hPQ_Agency"},
+                "HOGender":{"id":"hPQ_Gender1"},
                 "HONA":{"xpath":"//div[@id='rightColumn']//div//div[9]//input[1]"},
                 "HOFirstName":{"id":"hPQ_FirstName"},
                 "HOLastName":{"id":"hPQ_LastName"},
@@ -33,18 +35,29 @@ HoFullQuote = {"Days60PopUpButton":{"id":"popup_ok"},
                 "HOApplicantContinue":{"id":"Continue"},
                 "HOAddressSpinnerOverlay":{"id":"spinnerOverlay"},
                 "MMInsuredManagement":{"xpath":"//a[contains(text(),'Insured Login Management')]"},
-                ""
-                 # Credit Page/Tab
-                "HOCreditContinue":{"id":"Continue"},
-                # Add.info
-                "HOYearsAtCurrentAddress":{"id":"hPQ_yrscurrentaddress"},
-                "HOFirstTimeHomeBuyer":{"id":"hPQ_NewPurchase"},
-                "HOAddinfoContinueButton":{"id":"btnContinue"},
-                # Losses Page/Tab
-                "HOConstructionClase":{"xpath":"//select[@id='hCTC_ConstructionType']//option[2]"},
-                "HONumberOfFamilies":{"xpath":"//select[@id='hPQL_NumOfFamilies']//option[1]"},
-                "HOUsage":{"xpath":"//select[@id='hPQL_Usage']//option[2]"},
-                "HOLossesContinueButton":{"id":"Continue"}}
+                "HOCounty":{"id":"hPQ_CountyID"}}
+
+
+HoFullQuoteAcceptAgrement = {"SpinnerOverlay":{"id":"spinnerOverlay"},
+                            "HOAcceptAgreementRB":{"xpath":"//div[@class='component DynamicContainer']//div[1]//input[1]"},
+                            "HOAcceptAgreementContinueButton":{"id":"Continue"}}
+
+
+# HoFullQuoteCreditPage = {"SpinnerOverlay":{"id":"spinnerOverlay"},
+#                           "HOCreditContinue":{"id":"Continue"}}
+#
+#
+# HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},
+#                              "HOYearsAtCurrentAddress":{"id":"hPQ_yrscurrentaddress"},
+#                              "HOFirstTimeHomeBuyer":{"id":"hPQ_NewPurchase"},
+#                              "HOAddinfoContinueButton":{"id":"btnContinue"}}
+#
+#
+# HoFullQuoteLosses ={"SpinnerOverlay":{"id":"spinnerOverlay"},
+#                     "HOConstructionClase":{"xpath":"//select[@id='hCTC_ConstructionType']//option[2]"},
+#                     "HONumberOfFamilies":{"xpath":"//select[@id='hPQL_NumOfFamilies']//option[1]"},
+#                     "HOUsage":{"xpath":"//select[@id='hPQL_Usage']//option[2]"},
+#                     "HOLossesContinueButton":{"id":"Continue"}}
 
 
 

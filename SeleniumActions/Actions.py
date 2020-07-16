@@ -12,6 +12,8 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait as wdw
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import  *
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 
 class SeleniumActions():
@@ -107,11 +109,11 @@ class SeleniumActions():
 
 
 
+
     def selectDropdown(self,locator, locatorType,element=None,SelectValue=None):
         element = Select(self.get_element(locatortype=locatorType,
                                            locator=locator))
         element.select_by_value(SelectValue)
-
 
 
 
@@ -136,7 +138,29 @@ class SeleniumActions():
        checkalert.accept()
 
 
+    def waitForPageLoaded(self):
+        wait = self.waitForActionsOnElement(timeout=30)
+        return str((self.driver).execute_script("return document.readyState")) == "complete"
 
+    def LoadtheDomCompletely(self):
+        try:
+            i = 1
+            while (i == 1):
+                isLoaded = self.waitForPageLoaded()
+                if isLoaded == True:
+                    i = 0
+        except:
+            print('time out , page not loaded yet')
+
+    def tabout(self):
+       A= ActionChains(driver=self.driver)
+       A.send_keys(Keys.TAB)
+
+
+
+    # def sleepforsometime(self):
+    #     sleep = self.timetosleep(2)
+    #     return sleep
 
 
 

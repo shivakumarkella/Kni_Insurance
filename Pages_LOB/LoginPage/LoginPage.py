@@ -1,6 +1,6 @@
 from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
-from Pages_LOB.HoFullQuotePage import HoFullQuotePage
+
 
 
 
@@ -17,12 +17,12 @@ class LoginPage():
     lp_LoginButton_locatorType=list(Locator['LoginButton'].items())[0][0]
     lp_spinner_locator=list(Locator['SpinnerOverlay'].items())[0][1]
     lp_spinner_locatorType = list(Locator['SpinnerOverlay'].items())[0][0]
-    HOFullQuoteLink_locator = list(Locator['HOFullQuoteLink'].items())[0][1]
-    HOFullQuoteLink_locatorType = list(Locator['HOFullQuoteLink'].items())[0][0]
     invalidLogin_locator=list(Locator['InvalidLogin'].items())[0][1]
     invalidLogin_locatorType = list(Locator['InvalidLogin'].items())[0][0]
     InvalidUsername_locator=list(Locator['InvalidUsername'].items())[0][1]
     InvalidUsername_locatorType = list(Locator['InvalidUsername'].items())[0][0]
+    HOFullQuoteLink_locator = list(Locator['HOFullQuoteLink'].items())[0][1]
+    HOFullQuoteLink_locatorType = list(Locator['HOFullQuoteLink'].items())[0][0]
 
 
 
@@ -59,6 +59,7 @@ class LoginPage():
     def verifyInvalidUsername(self):
         result=self.obj_SeleniumActions.isElementPresent(locator=self.InvalidUsername_locator,
                                                          locatorType=self.InvalidUsername_locatorType)
+
         return result
 
     def verifyLoginSuceesful(self):
@@ -67,9 +68,11 @@ class LoginPage():
         return result
 
 
+
     def login(self,userName,password):
         self.goToLoginPage()
         self.enterUserName(userName)
         self.enterPassword(password)
         self.clickOnLoginButton()
         self.completeStingraySpinning()
+        self.verifyLoginSuceesful()

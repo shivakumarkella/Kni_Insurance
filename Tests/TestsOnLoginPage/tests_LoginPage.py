@@ -1,4 +1,4 @@
-from Pages_LOB.LoginPage import LoginPage
+from Pages_LOB.LoginPage.LoginPage import LoginPage
 from Tests.testData import TestData as TD
 from TestResults.customLogger import customLogger
 
@@ -9,6 +9,7 @@ class tests_LoginPage():
     def __init__(self,driver):
         self.log = customLogger()
         self.obj_login = LoginPage(driver)
+
 
 
     def testCase1_ValidLogin(self):
