@@ -14,6 +14,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import  *
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from TestResults.customLogger import customLogger
+import logging
 
 
 class SeleniumActions():
@@ -96,7 +98,7 @@ class SeleniumActions():
             element.click()
         except:
             print('Waited for' + locator + 'to be clicked, but ' + locatorType + 'not found')
-            return wait
+
 
     def isElementPresent(self,locator,locatorType='id',timeout=10):
         wait=self.waitForActionsOnElement()
@@ -113,6 +115,8 @@ class SeleniumActions():
     def selectDropdown(self,locator, locatorType,element=None,SelectValue=None):
         element = Select(self.get_element(locatortype=locatorType,
                                            locator=locator))
+        self.log = customLogger(logging.DEBUG)
+        self.log.error(SelectValue)
         element.select_by_value(SelectValue)
 
 
@@ -161,6 +165,14 @@ class SeleniumActions():
         selectedValue = Select(self.get_element(locatortype=locatorType,
                                           locator=locator)).first_selected_option.get_attribute("value")
         return selectedValue
+
+    def getListOFWindows(self):
+        handles=self.driver.window_handles
+
+        return handles
+
+    def sleepForWhile(self,sleepTime=5):
+        time.sleep(sleepTime)
 
 
 
