@@ -1,7 +1,7 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=8
+excelRowNumber=4
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 
@@ -75,3 +75,8 @@ AutomationFileName = 'automation'
 pathToSaveAutomationLog = "TestResults//DocsScreenShotsLogFiles//"
 
 
+
+from TestResults.customLogger import customLogger
+import logging
+log = customLogger(logging.INFO)
+log.info('Test Data Used from excel sheet , row number is :: '+str(excelRowNumber))
