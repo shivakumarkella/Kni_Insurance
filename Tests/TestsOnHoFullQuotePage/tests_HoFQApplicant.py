@@ -1,16 +1,17 @@
 from Pages_LOB.HoFullQuote.HoFullQuoteApplicantPage import HoFullQuoteApplicantPage
 from Tests.testData import TestData as TD
 from TestResults.customLogger import customLogger
-
+import logging
 
 class tests_HoFQApplicantPage():
 
     def __init__(self,driver):
-        self.log = customLogger()
+        self.log = customLogger(logging.INFO)
         self.obj_HoFullQuoteApplicantPage = HoFullQuoteApplicantPage(driver)
 
 
     def tests_ValidDetailsOnApplicant(self):
+        self.log.info('Started Filling The Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
         self.obj_HoFullQuoteApplicantPage.fillDetailsForHoFullQuote(FirstName=TD.FirstName, LastName= TD.LastName,SSN= TD.SSN,
                                                                     Email=TD.Email,
                                                            DOB=TD.DOB,

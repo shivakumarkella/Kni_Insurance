@@ -3,12 +3,16 @@ from Tests.TestsOnHoFullQuotePage import tests_HoFQApplicant as HoFqApplication
 from Tests.TestsOnHoFullQuotePage import tests_HoFQTandC as HoTandC
 import unittest
 import pytest
+from TestResults.customLogger import customLogger
+import logging
+
 
 @pytest.mark.usefixtures("oneTimeSetUp")
 class test_happyPath(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
     def thisClassConfig(self):
+        self.log = customLogger(logging.INFO)
         self.obj_loginPage=loginPage.tests_LoginPage(self.driver)
         self.obj_HoFqApplication=HoFqApplication.tests_HoFQApplicantPage(self.driver)
         self.obj_HoTandC = HoTandC.tests_HoFQTandC(self.driver)
@@ -17,7 +21,9 @@ class test_happyPath(unittest.TestCase):
     def tests_HoLobPath(self):
         self.obj_loginPage.testCase1_ValidLogin()
         self.obj_HoFqApplication.tests_ValidDetailsOnApplicant()
+        self.log.info('Filling Done on Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
+        self.log.info(' Ho Full Quote T and C  :: Method ValidDeatilsonTandC ')
         self.obj_HoTandC.tests_ValidDeatilsonTandC()
-
+        self.log.info(' on the Ho Full Quote T and C Page ')
 
 
