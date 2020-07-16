@@ -1,6 +1,7 @@
 from Tests.TestsOnLoginPage import tests_LoginPage as loginPage
 from Tests.TestsOnHoFullQuotePage import tests_HoFQApplicant as HoFqApplication
 from Tests.TestsOnHoFullQuotePage import tests_HoFQTandC as HoTandC
+from Tests.TestsOnHoFullQuotePage import tests_HoFQCredits as HoCredits
 import unittest
 import pytest
 from TestResults.customLogger import customLogger
@@ -16,6 +17,7 @@ class test_happyPath(unittest.TestCase):
         self.obj_loginPage=loginPage.tests_LoginPage(self.driver)
         self.obj_HoFqApplication=HoFqApplication.tests_HoFQApplicantPage(self.driver)
         self.obj_HoTandC = HoTandC.tests_HoFQTandC(self.driver)
+        self.obj_HoCredits = HoCredits.tests_HoFQCredits(self.driver)
 
     @pytest.mark.run(order=1)
     def tests_HoLobPath(self):
@@ -25,5 +27,10 @@ class test_happyPath(unittest.TestCase):
         self.log.info(' Ho Full Quote T and C  :: Method ValidDeatilsonTandC ')
         self.obj_HoTandC.tests_ValidDeatilsonTandC()
         self.log.info(' on the Ho Full Quote T and C Page ')
+        self.log.info('Terms and Conditions Accepted')
+        self.obj_HoCredits.tests_ValidDeatilsonCredit()
+        self.log.info('Current on the Credits Page')
+
+
 
 

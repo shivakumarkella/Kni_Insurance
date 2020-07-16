@@ -2,12 +2,12 @@ from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
 
 
-class HoFullQuoteAcceptTermsAndConditionPage():
+class HoFQTandCPage():
 
     # Locators
     Locator = ApplicationLocators.HoFullQuoteAcceptAgrement
-    HOAcceptSpinner_locator = list(Locator["SpinnerOverlay"].items())[0][1]
-    HOAcceptSpinner_locatorType = list(Locator["SpinnerOverlay"].items())[0][0]
+    HOAddressspinner_locator = list(Locator['SpinnerOverlay'].items())[0][1]
+    HOAddressspinner_locatorType = list(Locator['SpinnerOverlay'].items())[0][0]
     HOAcceptAgreementRB_locator = list(Locator['HOAcceptAgreementRB'].items())[0][1]
     HOAcceptAgreementRB_locatorType = list(Locator['HOAcceptAgreementRB'].items())[0][0]
     HOAcceptAgreementContinueButton_locator = list(Locator['HOAcceptAgreementContinueButton'].items())[0][1]
@@ -23,14 +23,17 @@ class HoFullQuoteAcceptTermsAndConditionPage():
                                                    locatorType=self.HOAcceptAgreementRB_locatorType)
 
     def clickOnAcceptAgrementContinueButton(self):
-        self.obj_SeleniumActions.waitForElementToClickOn(locator=self.HOAcceptAgreementContinueButton_locator,
+        self.obj_SeleniumActions.clickmethod(locator=self.HOAcceptAgreementContinueButton_locator,
                                                          locatorType=self.HOAcceptAgreementContinueButton_locatorType)
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOAcceptSpinner_locator,
-                                                            locatorType=self.HOAcceptSpinner_locatorType)
+        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOAddressspinner_locator,
+                                                            locatorType=self.HOAddressspinner_locatorType)
+
+
 
     def acceptTermsAndCondition(self):
         self.completeStingraySpinning()
+        self.obj_SeleniumActions.sleepForWhile(10)
         self.selectAcceptAgrementRB()
         self.clickOnAcceptAgrementContinueButton()

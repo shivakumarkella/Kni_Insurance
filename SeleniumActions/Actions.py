@@ -57,6 +57,8 @@ class SeleniumActions():
         time.sleep(timetosleep)
 
 
+
+
     def waitForActionsOnElement(self,timeout=10, pollFrequency=0.5):
         try:
             wait = wdw(self.driver, timeout=timeout, poll_frequency=pollFrequency,
@@ -173,6 +175,11 @@ class SeleniumActions():
 
     def sleepForWhile(self,sleepTime=5):
         time.sleep(sleepTime)
+
+
+    def clickmethod(self,locator, locatorType):
+        element = self.get_element(locator=locator,locatortype=locatorType)
+        element.click()
 
 
 

@@ -1,7 +1,7 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=4
+excelRowNumber=66
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 
@@ -18,7 +18,7 @@ data=data.to_dict(orient='records')
 LastName=list(data[dataRow].items())[0][1]
 FirstName = list(data[dataRow].items())[1][1]
 SSN = int(list(data[dataRow].items())[2][1])
-# DOB= dt.datetime.strptime(str(int(list(data[dataRow].items())[3][1])),'%Y%m%d').date()
+# DOB= dt.datetime.strptime(str(int(list(data[dataRow].items())[3][1])),'%m%d%Y').date()
 selectgender = list(data[dataRow].items())[4][1]
 
 StreetNumber = list(data[dataRow].items())[5][1]
@@ -75,8 +75,3 @@ AutomationFileName = 'automation'
 pathToSaveAutomationLog = "TestResults//DocsScreenShotsLogFiles//"
 
 
-
-from TestResults.customLogger import customLogger
-import logging
-log = customLogger(logging.INFO)
-log.info('Test Data Used from excel sheet , row number is :: '+str(excelRowNumber))

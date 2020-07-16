@@ -43,8 +43,8 @@ HoFullQuoteAcceptAgrement = {"SpinnerOverlay":{"id":"spinnerOverlay"},
                             "HOAcceptAgreementContinueButton":{"id":"Continue"}}
 
 
-# HoFullQuoteCreditPage = {"SpinnerOverlay":{"id":"spinnerOverlay"},
-#                           "HOCreditContinue":{"id":"Continue"}}
+HoFullQuoteCreditPage = {"SpinnerOverlay":{"id":"spinnerOverlay"},
+                        "HOCreditContinue":{"id":"Continue"}}
 #
 #
 # HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},

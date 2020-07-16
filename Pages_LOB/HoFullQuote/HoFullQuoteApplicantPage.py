@@ -169,7 +169,6 @@ class HoFullQuoteApplicantPage():
         self.obj_SeleniumActions.LoadtheDomCompletely()
         self.completeStingraySpinning()
         self.completeStingraySpinning()
-
         self.gotoHoFullQuotePage()
         self.quoteValidFor60Days()
         self.obj_SeleniumActions.LoadtheDomCompletely()
@@ -200,3 +199,4 @@ class HoFullQuoteApplicantPage():
             self.emptyBox()
         self.completeStingraySpinning()
         self.clickonApplicantContinuebutton()
+        self.completeStingraySpinning()
