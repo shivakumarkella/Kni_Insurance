@@ -21,6 +21,8 @@ class LoginPage():
     invalidLogin_locatorType = list(Locator['InvalidLogin'].items())[0][0]
     InvalidUsername_locator=list(Locator['InvalidUsername'].items())[0][1]
     InvalidUsername_locatorType = list(Locator['InvalidUsername'].items())[0][0]
+    lp_loginDiv_locator=list(Locator['LoginDiv'].items())[0][1]
+    lp_loginDiv_locatorType = list(Locator['LoginDiv'].items())[0][0]
     HOFullQuoteLink_locator = list(Locator['HOFullQuoteLink'].items())[0][1]
     HOFullQuoteLink_locatorType = list(Locator['HOFullQuoteLink'].items())[0][0]
 
@@ -67,12 +69,20 @@ class LoginPage():
                                                          locatorType=self.HOFullQuoteLink_locatorType)
         return result
 
+    def takeScreenShotToDocForLoginDiv(self,returnDocName=True,heading='',paragraphTobeAdded=''):
+        fileName = self.obj_SeleniumActions.saveScreenShotInDocxFile(locatorType=self.lp_loginDiv_locatorType,
+                                                                     locator=self.lp_loginDiv_locator,
+                                                                returnDocName=returnDocName, heading=heading,
+                                                                paragraphTobeAdded=paragraphTobeAdded)
+        return fileName
 
-
-    def login(self,userName,password):
+    def login(self,userName,password,filnameRequired=0):
         self.goToLoginPage()
         self.enterUserName(userName)
         self.enterPassword(password)
+        fileName=self.takeScreenShotToDocForLoginDiv(heading='Login Page')
         self.clickOnLoginButton()
         self.completeStingraySpinning()
         self.verifyLoginSuceesful()
+        if filnameRequired==1:
+            return fileName

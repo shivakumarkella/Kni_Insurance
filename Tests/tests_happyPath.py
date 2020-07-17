@@ -23,8 +23,8 @@ class test_happyPath(unittest.TestCase):
 
     @pytest.mark.run(order=1)
     def tests_HoLobPath(self):
-        self.obj_loginPage.testCase1_ValidLogin()
-        self.obj_HoFqApplication.tests_ValidDetailsOnApplicant()
+        fileName=self.obj_loginPage.testCase1_ValidLogin(filnameRequired=1)
+        self.obj_HoFqApplication.tests_ValidDetailsOnApplicant(fileName=fileName)
         self.log.info('Filling Done on Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
         self.log.info(' Ho Full Quote T and C  :: Method ValidDeatilsonTandC ')
         self.obj_HoTandC.tests_ValidDeatilsonTandC()

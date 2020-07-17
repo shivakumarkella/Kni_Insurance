@@ -17,6 +17,7 @@ class GetDriverInstance():
         driver.maximize_window()
         driver.implicitly_wait(2)
 
+
         return driver
 
 

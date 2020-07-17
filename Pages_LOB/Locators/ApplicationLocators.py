@@ -8,7 +8,8 @@ Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "HOFullQuoteLink":{"Xpath":"//table[@class='TableMenu']//a[contains(text(),'Full Quote - HO')]"},
             "SpinnerOverlay":{"id":"spinnerOverlay"},
             "InvalidUsername":{"Xpath":"//div[contains(text(),'Invalid Login - Your user account will be locked o')]"},
-            "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"}
+            "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"},
+            "LoginDiv":{"Xpath": "//table[@class='Login']"}
              }
 
 

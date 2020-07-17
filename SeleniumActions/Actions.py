@@ -271,7 +271,7 @@ class SeleniumActions():
             #set Default Height as 6 inches
             height=6
         if path.lower()=='default':
-            path='C:\\Users\\kella\\workspace_python\\Kni_Insurance\\TestResults\\DocsScreenShotsLogFiles'
+            path='C:\\Users\\kella\\workspace_python\\Kni_Insurance\\TestResults\\DocsScreenShotsLogFiles\\'
         if addScreenShotToSameDoc.lower()=='default':
             # by default we will save the screen shots in the new file
             addScreenShotToSameDoc=False
