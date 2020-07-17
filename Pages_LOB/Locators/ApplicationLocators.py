@@ -8,7 +8,8 @@ Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "HOFullQuoteLink":{"Xpath":"//table[@class='TableMenu']//a[contains(text(),'Full Quote - HO')]"},
             "SpinnerOverlay":{"id":"spinnerOverlay"},
             "InvalidUsername":{"Xpath":"//div[contains(text(),'Invalid Login - Your user account will be locked o')]"},
-            "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"}
+            "InvalidLogin":{"Xpath": "//div[contains(text(),'Invalid Login Please try again.')]"},
+            "LoginDiv":{"Xpath": "//table[@class='Login']"}
              }
 
 
@@ -53,11 +54,46 @@ HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},
                              "HOAddinfoContinueButton":{"id":"btnContinue"}}
 #
 #
-# HoFullQuoteLosses ={"SpinnerOverlay":{"id":"spinnerOverlay"},
-#                     "HOConstructionClase":{"xpath":"//select[@id='hCTC_ConstructionType']//option[2]"},
-#                     "HONumberOfFamilies":{"xpath":"//select[@id='hPQL_NumOfFamilies']//option[1]"},
-#                     "HOUsage":{"xpath":"//select[@id='hPQL_Usage']//option[2]"},
-#                     "HOLossesContinueButton":{"id":"Continue"}}
+HoFullQuoteLosses ={"SpinnerOverlay":{"id":"spinnerOverlay"},
+                    "HOConstructionClase":{"id":"hCTC_ConstructionType"},
+                    "HONumberOfFamilies":{"id":"hPQL_NumOfFamilies"},
+                    "HOUsage":{"id":"hPQL_Usage"},
+                    "HOLossesContinueButton":{"id":"Continue"}}
+
+HoFullQuoteE2Value ={"SpinnerOverlay":{"id":"spinnerOverlay"},
+                     "HoCoverageA":{"id":"hEV_coverage_a"},
+                     "HoSqftArea":{"id":"hEV_square_footage"},
+                     "HoConstructionYear":{"id":"hEV_year_built"},
+                     "HoReplacementcosttype":{"id":"hEV_replacement_cost_type"},
+                     "HoPropertyLocation":{"id":"sEVL_ID"},
+                     "HoDwellingType":{"id":"sEVAT_ID"},
+                     "HoConstructionType":{"id":"hEV_CNType"},
+                     "HoConstructionQuality":{"id":"sEVCQ_ID"},
+                     "HoGeneralCondition":{"id":"hEV_general"},
+                     "HoRoofCondition":{"id":"hEV_roof"},
+                     "HoDwellingShape":{"id":"sEVPS_ID"},
+                     "HoPrimaryExterior":{"id":"sEVPE_ID"},
+                     "HoPrimaryRoofCovering":{"id":"hEV_RCType"},
+                     "HoWallCondition":{"id":"hEV_wall"},
+                     "HoFoundationCondition":{"id":"hEV_foundation"},
+                     "HoE2valueContinueButton":{"id":"Continue"}}
+
+
+HoFullQuoteE2ValueResult ={"SpinnerOverlay":{"id": "spinnerOverlay"},
+                               "HoE2valueResultContinueButton":{"id":"Skip"}}
+
+
+
+HoFullQuoteCoverages = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                            "HoCoverageE":{"id":"hPQL_CoverageE"},
+                            "HoCoverageF":{"id":"hPQL_CoverageF"},
+                            "HoPolicyDeductble":{"id":"hPQL_Deductible"},
+                            "HoCoveragesContinueButton":{"id":"Continue"}}
+
+
+
+
+
 
 
 

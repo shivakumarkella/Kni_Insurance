@@ -1,7 +1,7 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=115
+excelRowNumber=123
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 
@@ -66,8 +66,39 @@ propertyZip="42102"
 YearsAtCurrentAddress ="5"
 selectvalueforagency="486"
 selectCounty ="67"
-# selectvalueforATC = "1"
-# selectgender = "M"
+
+# Values to be Selected on the Addinfo Page
+selectvalueforFamily = "1"
+selectvalueforUsage = "1"
+selectvalueforConstruction = "1"
+
+# Values to be Selected on the E2Value Screen
+coverageAvalue ="47000"
+livingArea="1200"
+ConstructionYear="2006"
+selectvalueforReplacementcosttype="full"
+selectvalueforPropertyLocation ="7"
+selectvalueforDwellingType ="7"
+selectConstructiontype="framing, steel"
+selectconstructionquality="1"
+selectvalueforGeneralcondition="1"
+selectvalueforRoofcondition="1"
+selectvalueforDwellingshape="3"
+selectvalueforPrimaryexterior="8"
+selectvalueforRoofcovering="architectural shingle"
+selectvalueforWallcondition="1"
+selectvalueforFoundationcondition="1"
+
+# Values to be selected Coverages Page
+
+selctvalueforCoverageE="100000"
+selectvalueforCoverageF="2000"
+selctvalueforPolicyDeductible="1000"
+
+
+
+
+
 
 
 location="C:\\Users\\Sharat\\Workspace_python\\Kni_Insurance\\TestResults\\Screenshots"
