@@ -158,17 +158,25 @@ class HoFullQuoteApplicantPage():
         selectedValue=self.obj_SeleniumActions.getTheDropDownSelectedValue(locatorType=self.HOCounty_locatorType,locator=self.HOCounty_locator)
         return selectedValue
 
-
+    def takeScreenShotToDocForHoFqLink(self,fileName, returnDocName=True, heading='', paragraphTobeAdded=''):
+        self.obj_SeleniumActions.saveScreenShotInDocxFile(locatorType=self.HOFullQuoteLink_locatorType,
+                                                                     locator=self.HOFullQuoteLink_locator,
+                                                                     returnDocName=returnDocName, heading=heading,
+                                                                     paragraphTobeAdded=paragraphTobeAdded,
+                                                                     fileName=fileName)
 
 
 
 
     def fillDetailsForHoFullQuote(self,FirstName,LastName,SSN,DOB,Email,propertyAddress1,propertyAddress2,propertyCity,
-                                  propertyState,propertyZip,selectvalue,selectgender,selctcounty):
+                                  propertyState,propertyZip,selectvalue,selectgender,selctcounty,fileName):
 
         self.obj_SeleniumActions.LoadtheDomCompletely()
         self.completeStingraySpinning()
         self.completeStingraySpinning()
+        if fileName!=0:
+            self.takeScreenShotToDocForHoFqLink(heading='HO Full Quote Link',paragraphTobeAdded='clicked on Ho FQ Link'
+                                                ,fileName=fileName)
         self.gotoHoFullQuotePage()
         self.quoteValidFor60Days()
         self.obj_SeleniumActions.LoadtheDomCompletely()
