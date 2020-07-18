@@ -36,7 +36,7 @@ class HoFQTandCPage():
     def acceptTermsAndCondition(self):
         self.completeStingraySpinning()
         # self.clickOnAcceptAgrementContinueButton()
-        self.obj_SeleniumActions.sleepForWhile(5)
+        # self.obj_SeleniumActions.sleepForWhile(5)
         self.clickOnAcceptAgrementContinueButton()
         self.obj_SeleniumActions.sleepForWhile(5)
         self.obj_SeleniumActions.handlingalert()

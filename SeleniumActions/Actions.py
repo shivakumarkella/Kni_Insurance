@@ -4,14 +4,10 @@
 # Writ a method to select * Dropdown, * check box, * radio Button * Alerts * Warnings
 
 
-from pytz import timezone
-from tzlocal import get_localzone
-import os as OS
-import docx as d
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By as BY
 from selenium.webdriver.support.ui import Select
-from datetime import datetime
 import time
 from selenium.webdriver.support.ui import WebDriverWait as wdw
 from selenium.webdriver.support import expected_conditions as EC
@@ -20,13 +16,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from TestResults.customLogger import customLogger
 import logging
-format = "%Y_%m_%d_%H_%M_%S" # time stamp will come in this format
 
 
 class SeleniumActions():
     def __init__(self,driver):
         self.driver = driver
-        self.timeStamp = (datetime.now(timezone(str(get_localzone()).upper()))).strftime(format)
 
     def by_type(self,locatortype):
         if locatortype.lower()=="id":
@@ -61,6 +55,8 @@ class SeleniumActions():
 
     def timetosleep(self, timetosleep=10):
         time.sleep(timetosleep)
+
+
 
 
     def waitForActionsOnElement(self,timeout=10, pollFrequency=0.5):
@@ -130,7 +126,6 @@ class SeleniumActions():
         element.select_by_value(SelectValue)
 
 
-    
 
 
 
@@ -211,112 +206,24 @@ class SeleniumActions():
         scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
         self.driver.execute_script("{}".format(scriptForScroll))
 
-    def highlight(self, element,directory_to_save_ScreenShot='Default'):
-        """Highlights (blinks) a Selenium Webdriver element"""
-        driver = self.driver
-        def apply_style(s):
-            driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",element, s)
-        original_style = element.get_attribute('style')
-        apply_style("background: yellow; border: 2px solid red;")
-        if directory_to_save_ScreenShot.lower()=='default':
-            print('only highlight the web element')
-        else:
-            self.driver.save_screenshot(directory_to_save_ScreenShot)
-        time.sleep(1)
-        apply_style(original_style)
+
+    # def selectRBforTandC(self,locator,locatorType,element=None, SelectValue=None):
+    #     element1 = Select(self.get_element(locator=locator, locatortype= locatorType))
+    #     element =element1.select_by_value(SelectValue)
+    #     element.click()
 
 
 
-
-    def takeScreenShot(self, element='Default', typeOfScreenShot='Default', screenShotName='Default', path='Default',
-                       returnScreenShotName=False):
-        typeOfScreenShot = typeOfScreenShot.lower()
-        screenShotName = screenShotName.lower()
-        path = path.lower()
-        if typeOfScreenShot == 'default':
-            typeOfScreenShot = '.png'
-        else:
-            typeOfScreenShot = '.jpg'
-        if screenShotName == 'default':
-            screenShotName = 'Demo'
-        if path == 'default':
-            path = 'C:\\Users\\kella\\workspace_python\\Kni_Insurance\\TestResults\\DocsScreenShotsLogFiles'
-
-        # To maintain Unique file name adding the time stamp to the screenshot
-        screenShotName = str(screenShotName) + str(self.timeStamp)
-        # by adding timestamp (.) is part of the file name, hence replace (.) with empty
-        screenShotName = screenShotName.replace('.', '')
-
-        directory_to_save_ScreenShot = path + screenShotName + typeOfScreenShot
-
-        if str(element).lower() == 'default':
-            self.driver.save_screenshot(directory_to_save_ScreenShot)
-        else:
-            self.highlight(element, directory_to_save_ScreenShot)
-
-        if returnScreenShotName == True:
-            return directory_to_save_ScreenShot
+    # def scrollDown(self):
+    #     self.driver.execute_script("window.scrollBy(0, 1000);")
+    #     time.sleep(2)
 
 
-    def saveScreenShotInDocxFile(self,locator='Default',locatorType='Default',fileName='Default',
-                                 heading='Default',width=0,height=0,deleteScreenShot='Default',
-                                 paragraphTobeAdded='Default',path='Default',addScreenShotToSameDoc='Default',
-                                 returnDocName=False):
-        if fileName.lower()=='default':
-            fileName='Demo'
-        if width==0:
-            #Set Default Width as 6 Inches
-            width=6
-        if height==0:
-            #set Default Height as 6 inches
-            height=6
-        if path.lower()=='default':
-            path='C:\\Users\\kella\\workspace_python\\Kni_Insurance\\TestResults\\DocsScreenShotsLogFiles\\'
-        if addScreenShotToSameDoc.lower()=='default':
-            # by default we will save the screen shots in the new file
-            addScreenShotToSameDoc=False
-            # To maintain Unique file name adding the time stamp to the Document
-            fileName = str(fileName) + str(self.timeStamp)
-            # add the extension to the file , word document .docx
-            fileName = fileName + '.docx'
-        # #neew code for the Element access
 
-        # element=Object_element.waitForElement(locatorType,locator)
-        if locatorType.lower()=='default' or locator.lower()=='default':
-            screenShotPath = self.takeScreenShot(returnScreenShotName=True)
-        else:
+    # def selectRBforTandC(self,locator,locatorType,element=None):
+    #     element = self.driver.ActionChains.double_click(locator=locator, locatorType=locatorType)
+    #     element.click().perform()
 
-            element=self.get_element(locator=str(locator),locatortype=str(locatorType))
-            screenShotPath = self.takeScreenShot(element,returnScreenShotName=True)
+    # webdriver.ActionChains.double_click().perform()
 
-        directoryTosavetheDocFile=path+fileName
-        #check the document exist  in the directory or not
-        is_document_exist=OS.path.exists(directoryTosavetheDocFile)
-        if is_document_exist==True:
-            #using the exisitng document
-            document=d.Document(directoryTosavetheDocFile)
-            document.add_page_break()
-        else:
-            document=d.Document()
-        if heading.lower() == 'default':
-            heading = ''
-        else:
-            document.add_heading(heading,0)
-
-        if paragraphTobeAdded.lower()=='default':
-            #nothing is there to add into the document
-            paragraphTobeadded=False
-        else:
-            document.add_paragraph(paragraphTobeAdded)
-
-        document.add_picture(screenShotPath,width=d.shared.Inches(width),height=d.shared.Inches(height))
-
-        if deleteScreenShot.lower()=='default':
-            #by default we will delete the screen shot once we paste the it into the Word documnet
-            deleteScreenShot=True
-            OS.remove(screenShotPath)
-        document.save(directoryTosavetheDocFile)
-
-        if returnDocName==True:
-            return fileName
 

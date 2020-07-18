@@ -6,7 +6,11 @@ from Tests.TestsOnHoFullQuotePage import tests_HoFQAddInfo as HoAddinfo
 from Tests.TestsOnHoFullQuotePage import tests_HoFQLosses as HoLosses
 from Tests.TestsOnHoFullQuotePage import tests_HoFQE2Value as HoE2value
 from Tests.TestsOnHoFullQuotePage import tests_HoFQE2Reults as HoE2Result
-from Tests.TestsOnHoFullQuotePage import tests_HoFullQuoteCoverages as HoCoverages
+from Tests.TestsOnHoFullQuotePage import tests_HoFQCoverages as HoCoverages
+from Tests.TestsOnHoFullQuotePage import tests_HoFQProperty as HoProperty
+from Tests.TestsOnHoFullQuotePage import tests_HoFQUWQuests as HoUWQuest
+from Tests.TestsOnHoFullQuotePage import tests_HoFQClueResults as HoClueResults
+from Tests.TestsOnHoFullQuotePage import tests_HoFQEndorsement as HoEndorsement
 import unittest
 import pytest
 from TestResults.customLogger import customLogger
@@ -28,13 +32,16 @@ class test_happyPath(unittest.TestCase):
         self.obj_HoE2value=HoE2value.tests_HoFQE2ValuePage(self.driver)
         self.obj_HoE2Result=HoE2Result.tests_HoFQE2ResultsPage(self.driver)
         self.obj_HoCoverages=HoCoverages.tests_HoFQCoveragePage(self.driver)
-
+        self.obj_HoProperty= HoProperty.tests_HoFQPropertyPage(self.driver)
+        self.obj_HoUWQuest=HoUWQuest.tests_HoFQCoveragePage(self.driver)
+        self.obj_HoClueResults= HoClueResults.tests_HoFQClueresultsPage(self.driver)
+        self.obj_HoEndorsement= HoEndorsement.tests_HoFQEndorsementPage(self.driver)
 
 
     @pytest.mark.run(order=1)
     def tests_HoLobPath(self):
-        fileName=self.obj_loginPage.testCase1_ValidLogin(filnameRequired=1)
-        self.obj_HoFqApplication.tests_ValidDetailsOnApplicant(fileName=fileName)
+        self.obj_loginPage.testCase1_ValidLogin()
+        self.obj_HoFqApplication.tests_ValidDetailsOnApplicant()
         self.log.info('Filling Done on Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
         self.log.info(' Ho Full Quote T and C  :: Method ValidDeatilsonTandC ')
         self.obj_HoTandC.tests_ValidDeatilsonTandC()
@@ -52,11 +59,27 @@ class test_happyPath(unittest.TestCase):
         self.obj_HoE2value.tests_ValidDetailsOnE2ValuePage()
         self.log.info('Third Party Valuation Page called E2Value')
         self.log.info('Third Party Valuation completed')
-        self.obj_HoE2Result.clickE2ResultContinuebutton()
+        self.obj_HoE2Result.tests_clickE2ResultContinuebutton()
         self.log.info('The E2Value Calculated and Displayed the Results')
         self.log.info('The E2 reults are correct and clicked on continue button')
         self.obj_HoCoverages.tests_ValidDetailsOnCoveragesPage()
         self.log.info('The Coverages Values are Retained from the E2 Calculated fields now entering other Coverages')
+        self.log.info('The Coverages Values are Calculated')
+        self.obj_HoProperty.tests_ValidDetailsOnPropertyPage()
+        self.log.info('The property value are being Caluclated')
+        self.log.info('The Proprty Page Completed')
+        self.obj_HoUWQuest.tests_ValidDetailsOnUWQuest()
+        self.log.info('The UW questions started the Answering')
+        self.log.info('The UW Questions Completed')
+        self.obj_HoClueResults.tests_clickClueContinuebutton()
+        self.log.info("Laned on the Clue Results page and Screenshot Captured")
+        self.log.info("Clicked on the Continue Button")
+        self.obj_HoEndorsement.tests_clickEndorsementContinuebutton()
+        self.log.info("")
+        self.log.info("")
+
+
+
 
 
 

@@ -50,3 +50,4 @@ class HoFullQuoteLosses():
         self.selectNumberofFamilies(selectvalueforFamily)
         self.selectUsage(selectvalueforUsage)
         self.clickonLossesContinueButton()
+        self.completeStingraySpinning()

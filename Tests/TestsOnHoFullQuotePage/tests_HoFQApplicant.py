@@ -10,7 +10,7 @@ class tests_HoFQApplicantPage():
         self.obj_HoFullQuoteApplicantPage = HoFullQuoteApplicantPage(driver)
 
 
-    def tests_ValidDetailsOnApplicant(self,fileName=0):
+    def tests_ValidDetailsOnApplicant(self):
         self.log.info('Started Filling The Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
         self.obj_HoFullQuoteApplicantPage.fillDetailsForHoFullQuote(FirstName=TD.FirstName, LastName= TD.LastName,SSN= TD.SSN,
                                                                     Email=TD.Email,
@@ -21,7 +21,7 @@ class tests_HoFQApplicantPage():
                                                            propertyZip=TD.propertyZip,
                                                            selectvalue=TD.selectvalueforagency,
                                                            selectgender=TD.selectgender,
-                                                           selctcounty=TD.selectCounty,fileName=fileName)
+                                                           selctcounty=TD.selectCounty)
 
 
 

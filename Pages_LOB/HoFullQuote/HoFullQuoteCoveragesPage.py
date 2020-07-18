@@ -57,4 +57,5 @@ class HoFullQuoteCoveragesPage():
         self.coverageFvalue(coverageFvalue)
         self.policyDeductble(policydeductble)
         self.coverageContinueButton()
+        self.completeStingraySpinning()
 

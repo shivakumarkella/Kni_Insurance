@@ -1,7 +1,7 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=123
+excelRowNumber=141
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 
@@ -96,6 +96,19 @@ selectvalueforCoverageF="2000"
 selctvalueforPolicyDeductible="1000"
 
 
+
+# Values to be selected for property page
+slectvalueforOccupancy = "1"
+distanceFromFire="100"
+selectvalueforPrimaryheatingsource ="14"
+selectvalueforFuelType="electric"
+
+# Values for UW QUest Page
+applicantKnown ="5"
+
+# Values for HoAddBillingInfoPage
+selectvalueforinvoice = "IN_489983"
+selectvalueforrenewal = "IN_489983"
 
 
 

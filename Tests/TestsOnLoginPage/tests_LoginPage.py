@@ -13,16 +13,11 @@ class tests_LoginPage():
 
 
 
-    def testCase1_ValidLogin(self,filnameRequired=0):
-        if filnameRequired==1:
-            fileName=self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword,filnameRequired=filnameRequired)
-        else:
-            self.obj_login.login(userName=TD.ValidUsername, password=TD.ValidPassword)
+    def testCase1_ValidLogin(self):
+        self.obj_login.login(userName=TD.ValidUsername,password=TD.ValidPassword)
         self.log.info('Test Data Used for Login , User Name is :: ' + str(TD.ValidUsername))
         result=self.obj_login.verifyLoginSuceesful()
         self.log.info('is Login Suceesful , Result is :: ' + str(result))
-        if filnameRequired==1:
-            return fileName
 
 
 

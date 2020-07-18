@@ -9,6 +9,6 @@ class tests_HoFQE2ResultsPage():
         self.obj_HoFullQuoteE2Result = HoFullQuoteE2ValueResultPage(driver)
 
 
-    def clickE2ResultContinuebutton(self):
+    def tests_clickE2ResultContinuebutton(self):
         self.log.info('click successfull')
         self.obj_HoFullQuoteE2Result.tests_clickoncontinuebuttonforE2Results()

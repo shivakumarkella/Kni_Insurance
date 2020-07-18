@@ -1,6 +1,3 @@
-
-
-
 Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
@@ -46,19 +43,23 @@ HoFullQuoteAcceptAgrement = {"SpinnerOverlay":{"id":"spinnerOverlay"},
 
 HoFullQuoteCreditPage = {"SpinnerOverlay":{"id":"spinnerOverlay"},
                         "HOCreditContinue":{"id":"Continue"}}
-#
-#
+
+
+
 HoFullQuoteAddinformation = {"SpinnerOverlay":{"id":"spinnerOverlay"},
                              "HOYearsAtCurrentAddress":{"id":"hPQ_yrscurrentaddress"},
                              "HOFirstTimeHomeBuyer":{"id":"hPQ_NewPurchase"},
                              "HOAddinfoContinueButton":{"id":"btnContinue"}}
-#
-#
+
+
+
 HoFullQuoteLosses ={"SpinnerOverlay":{"id":"spinnerOverlay"},
                     "HOConstructionClase":{"id":"hCTC_ConstructionType"},
                     "HONumberOfFamilies":{"id":"hPQL_NumOfFamilies"},
                     "HOUsage":{"id":"hPQL_Usage"},
                     "HOLossesContinueButton":{"id":"Continue"}}
+
+
 
 HoFullQuoteE2Value ={"SpinnerOverlay":{"id":"spinnerOverlay"},
                      "HoCoverageA":{"id":"hEV_coverage_a"},
@@ -89,6 +90,78 @@ HoFullQuoteCoverages = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                             "HoCoverageF":{"id":"hPQL_CoverageF"},
                             "HoPolicyDeductble":{"id":"hPQL_Deductible"},
                             "HoCoveragesContinueButton":{"id":"Continue"}}
+
+HoFullQuoteProperty = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                       "HoOccupancy":{"id":"hPQL_Occupancy"},
+                       "HoDistancfromFireHydrant":{"id":"hPQL_FeetFromHydrant"},
+                       "HoVisibletoNeighbours":{"id":"hPQL_Visible_To_Neighbors"},
+                       "HoPrimaryHeatSource":{"id":"hPQL_Heating_type"},
+                       "HoFuelType":{"id":"hPQL_Fuel_Type"},
+                       "HoAlternatingHeatSource":{"xpath":"//div[7]//div[3]//div[3]//input[1]"},
+                       "HoSwimmingPool":{"xpath":"//div[@id='rightColumn']//div[1]//div[3]//input[1]"},
+                       "HoPropertyContinueButton":{"id":"Continue"}}
+
+
+HoFullQuoteUWQuest ={"SpinnerOverlay":{"id": "spinnerOverlay"},
+                     "HoApplicantKnown":{"id":"EDIT244_KnowApplicant"},
+                     "HoHaveyouinspectedtheproperty":{"xpath":"//tr[@id='RowInspectedProperty']//td[3]//div[1]//input[1]"},
+                     "HoIsthisrisknewtoyouragency":{"xpath":"//tr[@id='RowNewRisk']//td[4]//div[1]//input[1]"},
+                     "HoAnyfarmingorotherbusinessconductedonpremises":{"xpath":"//tr[@id='RowHomeBusiness']//td[4]//div[1]//input[1]"},
+                     "HoAnyFloodingBrushForestFirehazardslandslideetc":{"xpath":"//tr[@id='RowDisasters']//td[4]//div[1]//input[1]"},
+                     "HoAnyotherresidenceownedoccupiedorrented":{"xpath":"//tr[@id='RowOtherOwned']//td[4]//div[1]//input[1]"},
+                     "HoHasapplicanteverhadafireloss":{"xpath":"//tr[@id='RowFireLoss5000']//td[4]//div[1]//input[1]"},
+                     "HoHasinsurancebeentransferredwithinagency":{"xpath":"//tr[@id='RowTransferWithin']//td[4]//div[1]"},
+                     "HoAnycoveragedeclined":{"xpath":"//tr[@id='RowCovDeclined']//td[4]//div[1]"},
+                     "HoHasapplicanthadaforeclosure":{"xpath":"//tr[@id='RowForeclosed']//td[4]//div[1]//input[1]"},
+                     "HoIspropertysituatedonmorethanfiveacres":{"xpath":"//tr[@id='RowMore5Acres']//td[4]//div[1]//input[1]"},
+                     "HoDoesapplicantownanyrecreationalvehicles":{"xpath":"//tr[@id='RowOwnRVs']//td[4]//div[1]//input[1]"},
+                     "HoHasanyapplicanteverbeenconvictedofthecrimeofarson":{"xpath":"//tr[@id='RowArsonConviction']//td[4]//div[1]//input[1]"},
+                     "HoAnyuncorrectedfireorbuildingcodeviolations":{"xpath":"//tr[@id='RowFireCode']//td[4]//div[1]//input[1]"},
+                     "HoIsbuildingundergoingrenovationorreconstruction":{"xpath":"//tr[@id='RowRenovation']//td[4]//div[1]//input[1]"},
+                     "HoIshouseforsale":{"xpath":"//tr[@id='RowForSaleCurrently']//td[4]//div[1]//input[1]"},
+                     "HoIspropertywithin300feetofcommercialproperty":{"xpath":"//tr[@id='RowCommercialProp']//td[4]//div[1]//input[1]"},
+                     "HoIsthereatrampolineonthepremises":{"xpath":"//tr[@id='RowTrampoline']//td[4]//div[1]//input[1]"},
+                     "HoWasthestructureoriginallybuilt":{"xpath":"//tr[@id='RowConverted']//td[4]//div[1]"},
+                     "HoAnyleadpainthazard":{"xpath":"//tr[@id='RowLeadPaint']//td[4]//div[1]//input[1]"},
+                     "HoAnynon-domesticated":{"xpath":"//tr[@id='Rowwildanimal']//td[4]//div[1]//input[1]"},
+                     "HoAnyanimalkeptonpremises":{"xpath":"//tr[@id='Rowanimalbite']//td[4]//div[1]//input[1]"},
+                     "HoDoyouownand/orcarefor":{"xpath":"//tr[@id='Rowdogbreeds']//td[4]//div[1]//input[1]"},
+                     "HoDoyouboardhorses":{"xpath":"//tr[@id='Rowboardhorses']//td[4]//div[1]//input[1]"},
+                     "HoDoyouhaveanyhorsesforpersonaluse":{"xpath":"//tr[@id='Rowpersonalhorses']//td[4]//div[1]//input[1]"},
+                     "HoArethenamedinsuredsthesoleownersofthisdwelling":{"xpath":"//tr[@id='Rowsoleowners']//td[3]//div[1]//input[1]"},
+                     "HoIsthedwellingvacantorunoccupiedformorethan30consecutivedays":{"xpath":"//tr[@id='Rowvacantbuilding']//td[4]//div[1]"},
+                     "HoUWQuestContinueButton":{"id":"Continue"}}
+
+
+HoClueResults = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                 "HoClueResultContinueButton":{"id":"Continue"}}
+
+HoEndorsementPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                    "HoEndorsmentContinueButton":{"id":"Continue"}}
+
+HoAddBillingInfoPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                        "HoInvoice":{"id":"InvName"},
+                        "HoRenewalInvoice":{"id":"RenName"},
+                        "HoBillingInfoContinueButton":{"id":"Continue"}}
+
+# HoRatesPage =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
