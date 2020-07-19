@@ -171,9 +171,15 @@ class HoUWQUestPage():
         self.obj_SeleniumActions.selectRadiobutton(locator=self.HORadioButton24_locator,
                                                    locatorType=self.HORadioButton24_locatorType)
 
-    def istheDwellingVacant (self):
+    def istheDwellingVacant(self):
         self.obj_SeleniumActions.selectRadiobutton(locator=self.HORadioButton25_locator,
                                                    locatorType=self.HORadioButton25_locatorType)
+
+        self.obj_SeleniumActions.selectRadiobutton(locator=self.HORadioButton26_locator,
+                                               locatorType=self.HORadioButton26_locatorType)
+
+
+
 
 
     def clickOnUWQuestContinueButton(self):
@@ -181,12 +187,13 @@ class HoUWQUestPage():
                                                          locatorType=self.HOUWQuestContinueButton_locatorType)
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(timeout=5,locator=self.HOUWQuestSpinner_locator,
+        self.obj_SeleniumActions.waitForElementToDisappear(timeout=10,locator=self.HOUWQuestSpinner_locator,
                                                             locatorType=self.HOUWQuestSpinner_locatorType)
 
 
 
     def uwquestQuestions(self,years):
+        self.obj_SeleniumActions.LoadtheDomCompletely()
         self.completeStingraySpinning()
         self.obj_SeleniumActions.sleepForWhile(5)
         self.applicantKnown(years)

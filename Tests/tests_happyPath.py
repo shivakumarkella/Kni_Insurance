@@ -11,6 +11,7 @@ from Tests.TestsOnHoFullQuotePage import tests_HoFQProperty as HoProperty
 from Tests.TestsOnHoFullQuotePage import tests_HoFQUWQuests as HoUWQuest
 from Tests.TestsOnHoFullQuotePage import tests_HoFQClueResults as HoClueResults
 from Tests.TestsOnHoFullQuotePage import tests_HoFQEndorsement as HoEndorsement
+from Tests.TestsOnHoFullQuotePage import tests_HoFQBillingInfo as HoBilling
 import unittest
 import pytest
 from TestResults.customLogger import customLogger
@@ -36,6 +37,8 @@ class test_happyPath(unittest.TestCase):
         self.obj_HoUWQuest=HoUWQuest.tests_HoFQCoveragePage(self.driver)
         self.obj_HoClueResults= HoClueResults.tests_HoFQClueresultsPage(self.driver)
         self.obj_HoEndorsement= HoEndorsement.tests_HoFQEndorsementPage(self.driver)
+        self.obj_HoBilling=HoBilling.tests_HoFQBillingInfoPage(self.driver)
+
 
 
     @pytest.mark.run(order=1)
@@ -75,8 +78,12 @@ class test_happyPath(unittest.TestCase):
         self.log.info("Laned on the Clue Results page and Screenshot Captured")
         self.log.info("Clicked on the Continue Button")
         self.obj_HoEndorsement.tests_clickEndorsementContinuebutton()
-        self.log.info("")
-        self.log.info("")
+        self.log.info("Landed on Endorsement Page")
+        self.log.info("Continue Button clicked on Endorsement Page ")
+        self.obj_HoBilling.tests_ValidDetailsOnBillingInfoPage()
+        self.log.info("CUrrently on the Billing Info Page")
+        self.log.info("Billing Address Generated")
+
 
 
 

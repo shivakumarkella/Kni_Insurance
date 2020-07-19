@@ -7,7 +7,7 @@ class tests_HoFQCoveragePage():
 
     def __init__(self,driver):
         self.log = customLogger(logging.INFO)
-        self.obj_HoFullQuoteCoveragesPage =HoFullQuoteCoveragesPage (driver)
+        self.obj_HoFullQuoteCoveragesPage = HoFullQuoteCoveragesPage (driver)
 
 
     def tests_ValidDetailsOnCoveragesPage(self):

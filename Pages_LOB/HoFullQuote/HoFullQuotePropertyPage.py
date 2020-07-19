@@ -67,7 +67,7 @@ class HoFullQuotePropertyPage():
                                              locatorType=self.HOPropertyContinue_locatorType)
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(timeout=5,locator=self.HOPropertypinner_locator,
+        self.obj_SeleniumActions.waitForElementToDisappear(timeout=15,locator=self.HOPropertypinner_locator,
                                                             locatorType=self.HOPropertypinner_locatorType)
 
     def filldetailsforPropertypage(self,valueforOccupancy,distancefromfoire,primaryHeatingSource,fuelType):
@@ -82,5 +82,5 @@ class HoFullQuotePropertyPage():
         self.swimmingPool()
         self.propertyContinueButton()
         self.completeStingraySpinning()
-        self.obj_SeleniumActions.sleepForWhile(5)
+        # self.obj_SeleniumActions.sleepForWhile(5)
 

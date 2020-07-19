@@ -110,8 +110,8 @@ HoFullQuoteUWQuest ={"SpinnerOverlay":{"id": "spinnerOverlay"},
                      "HoAnyFloodingBrushForestFirehazardslandslideetc":{"xpath":"//tr[@id='RowDisasters']//td[4]//div[1]//input[1]"},
                      "HoAnyotherresidenceownedoccupiedorrented":{"xpath":"//tr[@id='RowOtherOwned']//td[4]//div[1]//input[1]"},
                      "HoHasapplicanteverhadafireloss":{"xpath":"//tr[@id='RowFireLoss5000']//td[4]//div[1]//input[1]"},
-                     "HoHasinsurancebeentransferredwithinagency":{"xpath":"//tr[@id='RowTransferWithin']//td[4]//div[1]"},
-                     "HoAnycoveragedeclined":{"xpath":"//tr[@id='RowCovDeclined']//td[4]//div[1]"},
+                     "HoHasinsurancebeentransferredwithinagency":{"xpath":"//tr[@id='RowTransferWithin']//td[4]//div[1]//input[1]"},
+                     "HoAnycoveragedeclined":{"xpath":"//tr[@id='RowCovDeclined']//td[4]//div[1]//input[1]"},
                      "HoHasapplicanthadaforeclosure":{"xpath":"//tr[@id='RowForeclosed']//td[4]//div[1]//input[1]"},
                      "HoIspropertysituatedonmorethanfiveacres":{"xpath":"//tr[@id='RowMore5Acres']//td[4]//div[1]//input[1]"},
                      "HoDoesapplicantownanyrecreationalvehicles":{"xpath":"//tr[@id='RowOwnRVs']//td[4]//div[1]//input[1]"},
@@ -121,7 +121,7 @@ HoFullQuoteUWQuest ={"SpinnerOverlay":{"id": "spinnerOverlay"},
                      "HoIshouseforsale":{"xpath":"//tr[@id='RowForSaleCurrently']//td[4]//div[1]//input[1]"},
                      "HoIspropertywithin300feetofcommercialproperty":{"xpath":"//tr[@id='RowCommercialProp']//td[4]//div[1]//input[1]"},
                      "HoIsthereatrampolineonthepremises":{"xpath":"//tr[@id='RowTrampoline']//td[4]//div[1]//input[1]"},
-                     "HoWasthestructureoriginallybuilt":{"xpath":"//tr[@id='RowConverted']//td[4]//div[1]"},
+                     "HoWasthestructureoriginallybuilt":{"xpath":"//tr[@id='RowConverted']//td[4]//div[1]//input[1]"},
                      "HoAnyleadpainthazard":{"xpath":"//tr[@id='RowLeadPaint']//td[4]//div[1]//input[1]"},
                      "HoAnynon-domesticated":{"xpath":"//tr[@id='Rowwildanimal']//td[4]//div[1]//input[1]"},
                      "HoAnyanimalkeptonpremises":{"xpath":"//tr[@id='Rowanimalbite']//td[4]//div[1]//input[1]"},
@@ -129,15 +129,16 @@ HoFullQuoteUWQuest ={"SpinnerOverlay":{"id": "spinnerOverlay"},
                      "HoDoyouboardhorses":{"xpath":"//tr[@id='Rowboardhorses']//td[4]//div[1]//input[1]"},
                      "HoDoyouhaveanyhorsesforpersonaluse":{"xpath":"//tr[@id='Rowpersonalhorses']//td[4]//div[1]//input[1]"},
                      "HoArethenamedinsuredsthesoleownersofthisdwelling":{"xpath":"//tr[@id='Rowsoleowners']//td[3]//div[1]//input[1]"},
-                     "HoIsthedwellingvacantorunoccupiedformorethan30consecutivedays":{"xpath":"//tr[@id='Rowvacantbuilding']//td[4]//div[1]"},
+                     "HoIsthedwellingvacantorunoccupiedformorethan30consecutivedays":{"xpath":"/html[1]/body[1]/div[1]/div[6]/div[1]/div[7]/div[1]/table[1]/tbody[1]/tr[30]/td[4]/div[1]/input[1]"},
                      "HoUWQuestContinueButton":{"id":"Continue"}}
 
 
 HoClueResults = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                 "HoProgressBar":{"xpath":"//label[@class='Default']//img"},
                  "HoClueResultContinueButton":{"id":"Continue"}}
 
 HoEndorsementPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
-                    "HoEndorsmentContinueButton":{"id":"Continue"}}
+                    "HoEndorsmentContinueButton":{"xpath":"//input[@id='continue']"}}
 
 HoAddBillingInfoPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                         "HoInvoice":{"id":"InvName"},
