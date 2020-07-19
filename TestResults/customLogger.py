@@ -15,7 +15,7 @@ def customLogger(logLevel=logging.DEBUG):
     # By default, log all messages
     logger.setLevel(logging.DEBUG)
 
-    AutomationFileName ='automationLogFiles.log'
+    AutomationFileName =TD.AutomationFileName + str(timeStamp)+'.log'
     pathToSaveAutomationLog = TD.pathToSaveAutomationLog+AutomationFileName
     fileHandler = logging.FileHandler(pathToSaveAutomationLog, mode='a')
     fileHandler.setLevel(logLevel)

@@ -141,8 +141,8 @@ HoEndorsementPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                     "HoEndorsmentContinueButton":{"xpath":"//input[@id='continue']"}}
 
 HoAddBillingInfoPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
-                        "HoInvoice":{"id":"InvName"},
-                        "HoRenewalInvoice":{"id":"RenName"},
+                        "HoInvoice":{"xpath":"/html[1]/body[1]/div[1]/div[6]/div[1]/div[7]/div[2]/select[1]/option[2]"},
+                        "HoRenewalInvoice":{"xpath":"/html[1]/body[1]/div[1]/div[6]/div[1]/div[7]/div[4]/select[1]/option[2]"},
                         "HoBillingInfoContinueButton":{"id":"Continue"}}
 
 # HoRatesPage =

@@ -12,6 +12,6 @@ class tests_HoFQBillingInfoPage():
 
     def tests_ValidDetailsOnBillingInfoPage(self):
         self.log.info('Started Filling The Ho Full Quote by using :: Method fillDetailsForHoFullQuote ')
-        self.obj_HoFullQuoteAddingInvoicePage.filldetailsforAddingBill(invoice=TD.selectvalueforinvoice,
-                                                                       renewal=TD.selectvalueforrenewal)
+        self.obj_HoFullQuoteAddingInvoicePage.filldetailsforAddingBill()
+
 

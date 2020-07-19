@@ -76,3 +76,4 @@ class LoginPage():
         self.clickOnLoginButton()
         self.completeStingraySpinning()
         self.verifyLoginSuceesful()
+        self.obj_SeleniumActions.sleepForWhile(2)

@@ -24,19 +24,19 @@ class HoFullQuoteAddingInvoice():
 
 
     def completeStingraySpinning(self):
-        self.obj_SeleniumActions.waitForElementToDisappear(locator=self.HOBillingspinner_locator,
+        self.obj_SeleniumActions.waitForElementToDisappear(timeout=15,locator=self.HOBillingspinner_locator,
                                                             locatorType=self.HOBillingspinner_locatorType)
 
 
 
-    def invoiceRecepient(self, selectvalue):
-       self.obj_SeleniumActions.selectDropdown(locator=self.HoInvoice_locator,
-                                                locatorType=self.HoInvoice_locatorType,SelectValue=selectvalue)
+    def invoiceRecepient(self):
+       self.obj_SeleniumActions.clickmethod(locator=self.HoInvoice_locator,
+                                                locatorType=self.HoInvoice_locatorType)
 
 
-    def renewalRecepient(self, selectvalue):
-       self.obj_SeleniumActions.selectDropdown(locator=self.HoRenewalInvoice_locator,
-                                                locatorType=self.HoRenewalInvoice_locatorType,SelectValue=selectvalue)
+    def renewalRecepient(self):
+       self.obj_SeleniumActions.clickmethod(locator=self.HoRenewalInvoice_locator,
+                                                locatorType=self.HoRenewalInvoice_locatorType)
 
 
 
@@ -45,12 +45,13 @@ class HoFullQuoteAddingInvoice():
                                                 locatorType=self.HoBillingContinueButton_locatorType)
 
 
-    def filldetailsforAddingBill(self,invoice,renewal):
+    def filldetailsforAddingBill(self):
 
         self.obj_SeleniumActions.LoadtheDomCompletely()
         self.completeStingraySpinning()
-        self.invoiceRecepient(invoice)
-        self.renewalRecepient(renewal)
+        self.invoiceRecepient()
+        self.renewalRecepient()
+        self.obj_SeleniumActions.sleepForWhile(2)
         self.billinginfoContinueButton()
         self.completeStingraySpinning()
 
