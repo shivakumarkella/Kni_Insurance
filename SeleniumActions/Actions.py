@@ -206,24 +206,3 @@ class SeleniumActions():
         scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
         self.driver.execute_script("{}".format(scriptForScroll))
 
-
-    # def selectRBforTandC(self,locator,locatorType,element=None, SelectValue=None):
-    #     element1 = Select(self.get_element(locator=locator, locatortype= locatorType))
-    #     element =element1.select_by_value(SelectValue)
-    #     element.click()
-
-
-
-    # def scrollDown(self):
-    #     self.driver.execute_script("window.scrollBy(0, 1000);")
-    #     time.sleep(2)
-
-
-
-    # def selectRBforTandC(self,locator,locatorType,element=None):
-    #     element = self.driver.ActionChains.double_click(locator=locator, locatorType=locatorType)
-    #     element.click().perform()
-
-    # webdriver.ActionChains.double_click().perform()
-
-

@@ -1,64 +1,16 @@
 import pandas
 import datetime as dt
 
-excelRowNumber=244
-
-rowNumber=excelRowNumber-1
-dataRow=rowNumber-1
-
-path='C:\\Users\\kella\workspace_python\\HO_UserData.xlsx'
-data=pandas.read_excel(path, sheet_name='APLUS Claims Data',nrows=rowNumber, usecols=['LAST NAME', 'FIRST NAME','INSURED SSN',
-                                                                                      'INSURED DOB','INSURED GENDER',
-                                                                                      'STREET NUMBER','STREET NAME','STREET TYPE',
-                                                                                      'APT NUMBER','CITY','STATE','ZIP CODE',
-                                                                                      'POLICY TYPE','POLICY NUMBER','ACCOUNT NUMBER','LOSS/ACCIDENT DATE',
-                                                                                      'CLAIM AMOUNT','CLAIM TYPE','CASE FILE NUMBER/CLAIM #',
-                                                                                      'STATUS','UPDATE FLAG','AM BEST NUMBER'
-                                                                                      ])
-data=data.to_dict(orient='records')
-LastName=list(data[dataRow].items())[0][1]
-FirstName = list(data[dataRow].items())[1][1]
-SSN = int(list(data[dataRow].items())[2][1])
-# DOB1= dt.datetime.strptime(str(int(list(data[dataRow].items())[3][1])),'%m%d%Y').date()
-# DOB=dt.datetime.strptime(DOB1,'%m/%d/%Y')
-selectgender = list(data[dataRow].items())[4][1]
-
-StreetNumber = list(data[dataRow].items())[5][1]
-StreetName = list(data[dataRow].items())[6][1]
-StreetBluff = list(data[dataRow].items())[7][1]
-propertyAddress1=str(StreetNumber)+' '+str(StreetName)+' '+str(StreetBluff)
-NumberaApt = list(data[dataRow].items())[8][1]
-if str(NumberaApt)=='nan':
-    aptNumber=' '
-else:
-    aptNumber=NumberaApt
-propertyCity = list(data[dataRow].items())[9][1]
-propertyState = list(data[dataRow].items())[10][1]
-propertyZip = str(int(list(data[dataRow].items())[11][1]))
-policyType = list(data[dataRow].items())[12][1]
-policyNumber = list(data[dataRow].items())[13][1]
-accountNumber = list(data[dataRow].items())[14][1]
-lossAccidentdate = dt.datetime.strptime(str(int(list(data[dataRow].items())[15][1])),'%Y%m%d').date()
-claimAmount = list(data[dataRow].items())[16][1]
-claimType = list(data[dataRow].items())[17][1]
-caseFileNumberClaim = list(data[dataRow].items())[18][1]
-status = list(data[dataRow].items())[19][1]
-updateFlag = list(data[dataRow].items())[20][1]
-amBestNumber = list(data[dataRow].items())[21][1]
-
-
-
+#Login Info
 ValidUsername = "xlsol"
 ValidPassword = "1234"
 InValidPassword = "8592212983"
 InValidUsername = "brxyz"
 
-DOB="10/31/1990"
+
+#Data hardCoded
 Email="test@test.com"
-
 propertyAddress2="     "
-
-
 YearsAtCurrentAddress ="5"
 selectvalueforagency="486"
 selectCounty ="67"
@@ -90,8 +42,6 @@ selctvalueforCoverageE="100000"
 selectvalueforCoverageF="2000"
 selctvalueforPolicyDeductible="1000"
 
-
-
 # Values to be selected for property page
 slectvalueforOccupancy = "1"
 distanceFromFire="100"
@@ -106,10 +56,52 @@ selectvalueforinvoice = "IN_489983"
 selectvalueforrenewal = "IN_489983"
 
 
+#Data From Excel Sheet
+excelRowNumber=241
+rowNumber=excelRowNumber-1
+dataRow=rowNumber-1
+path='C:\\Users\\kella\workspace_python\\HO_UserData.xlsx'
+data=pandas.read_excel(path, sheet_name='APLUS Claims Data',nrows=rowNumber, usecols=['LAST NAME', 'FIRST NAME','INSURED SSN',
+                                                                                      'INSURED DOB','INSURED GENDER',
+                                                                                      'STREET NUMBER','STREET NAME','STREET TYPE',
+                                                                                      'APT NUMBER','CITY','STATE','ZIP CODE',
+                                                                                      'POLICY TYPE','POLICY NUMBER','ACCOUNT NUMBER','LOSS/ACCIDENT DATE',
+                                                                                      'CLAIM AMOUNT','CLAIM TYPE','CASE FILE NUMBER/CLAIM #',
+                                                                                      'STATUS','UPDATE FLAG','AM BEST NUMBER'
+                                                                                      ])
+data=data.to_dict(orient='records')
+LastName=list(data[dataRow].items())[0][1]
+FirstName = list(data[dataRow].items())[1][1]
+SSN = int(list(data[dataRow].items())[2][1])
+DOB=dt.datetime.strptime(str(dt.datetime.strptime
+                             (str(int(list(data[dataRow].items())[3][1])),'%Y%m%d').date()), '%Y-%m-%d').strftime('%m/%d/%Y')
+selectgender = list(data[dataRow].items())[4][1]
+StreetNumber = list(data[dataRow].items())[5][1]
+StreetName = list(data[dataRow].items())[6][1]
+StreetBluff = list(data[dataRow].items())[7][1]
+propertyAddress1=str(StreetNumber)+' '+str(StreetName)+' '+str(StreetBluff)
+NumberaApt = list(data[dataRow].items())[8][1]
+if str(NumberaApt)=='nan':
+    aptNumber=' '
+else:
+    aptNumber=NumberaApt
+propertyCity = list(data[dataRow].items())[9][1]
+propertyState = list(data[dataRow].items())[10][1]
+propertyZip = str(int(list(data[dataRow].items())[11][1]))
+policyType = list(data[dataRow].items())[12][1]
+policyNumber = list(data[dataRow].items())[13][1]
+accountNumber = list(data[dataRow].items())[14][1]
+lossAccidentdate = dt.datetime.strptime(str(int(list(data[dataRow].items())[15][1])),'%Y%m%d').date()
+claimAmount = list(data[dataRow].items())[16][1]
+claimType = list(data[dataRow].items())[17][1]
+caseFileNumberClaim = list(data[dataRow].items())[18][1]
+status = list(data[dataRow].items())[19][1]
+updateFlag = list(data[dataRow].items())[20][1]
+amBestNumber = list(data[dataRow].items())[21][1]
 
 
-
-location="C:\\Users\\Sharat\\Workspace_python\\Kni_Insurance\\TestResults\\Screenshots"
+# ScreenShots and Log File Locations
+location="C:\\Users\\kella\\Workspace_python\\Kni_Insurance\\TestResults\\Screenshots"
 AutomationFileName = 'automation'
 pathToSaveAutomationLog = "TestResults//DocsScreenShotsLogFiles//"
 

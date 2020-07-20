@@ -1,4 +1,4 @@
-Loginpage = {"URL":{"URL":"http://10.1.1.18:88/login.max?preprocess=true#"},
+Loginpage = {"URL":{"URL":"http://10.1.1.13:88/login.max?preprocess=true#"},
             "UserName":{"Name":"UserName"},
             "Password":{"Name":"password"},
             "LoginButton":{"Name":"submit"},
