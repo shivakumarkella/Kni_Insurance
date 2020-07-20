@@ -135,7 +135,8 @@ HoFullQuoteUWQuest ={"SpinnerOverlay":{"id": "spinnerOverlay"},
 
 HoClueResults = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                  "HoProgressBar":{"xpath":"//label[@class='Default']//img"},
-                 "HoClueResultContinueButton":{"id":"Continue"}}
+                 "HoClueResultContinueButton":{"id":"Continue"},
+                 "HoClueResultFullRight":{"css":"div.right.column.component.EditableContent:nth-child(1) div.component.DynamicContainer:nth-child(3) div.component.EditorLabel div.TableMasterWrapper:nth-child(2) div.sBase > div.sData"}}
 
 HoEndorsementPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                     "HoEndorsmentContinueButton":{"xpath":"//input[@id='continue']"}}

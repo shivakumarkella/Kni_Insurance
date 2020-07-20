@@ -50,6 +50,7 @@ selectvalueforFuelType="electric"
 
 # Values for UW QUest Page
 applicantKnown ="5"
+applicantKnown ="5"
 
 # Values for HoAddBillingInfoPage
 selectvalueforinvoice = "IN_489983"
@@ -57,7 +58,7 @@ selectvalueforrenewal = "IN_489983"
 
 
 #Data From Excel Sheet
-excelRowNumber=233
+excelRowNumber=223
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 path='C:\\Users\\kella\workspace_python\\HO_UserData.xlsx'

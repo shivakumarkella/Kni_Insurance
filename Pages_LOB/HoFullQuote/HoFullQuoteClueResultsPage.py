@@ -13,6 +13,8 @@ class HoFullQuoteClueResultPage():
     HOProgress_locatorType = list(Locator['HoProgressBar'].items())[0][0]
     HoClueResultContinueButton_locator=list(Locator['HoClueResultContinueButton'].items())[0][1]
     HoClueResultContinueButton_locatorType= list(Locator['HoClueResultContinueButton'].items())[0][0]
+    HoClueResultFullRight_locator = list(Locator['HoClueResultFullRight'].items())[0][1]
+    HoClueResultFullRight_locatorType = list(Locator['HoClueResultFullRight'].items())[0][0]
 
     def __init__(self, driver):
         self.driver = driver
@@ -33,10 +35,16 @@ class HoFullQuoteClueResultPage():
     def screenShot(self,screenShotName='Default'):
         self.obj_SeleniumActions.takeScreenShot(screenShotName=screenShotName)
 
+    def scrollTheResultsTableToRight(self):
+        self.obj_SeleniumActions.scrollLeftInWebElement(cssSelector=self.HoClueResultFullRight_locator)
+
 
     def tests_clickoncontinuebuttonforClueResults(self):
         self.completeStingraySpinning()
         self.obj_SeleniumActions.sleepForWhile(30)
-        self.screenShot(screenShotName='ClueResults')
-        self.obj_SeleniumActions.sleepForWhile(2)
+        self.screenShot(screenShotName='ClueResultsLeft')
+        self.obj_SeleniumActions.sleepForWhile(1)
+        self.scrollTheResultsTableToRight()
+        self.screenShot(screenShotName='ClueResultsRight')
+        self.obj_SeleniumActions.sleepForWhile(1)
         self.clueResultsContinueButton()

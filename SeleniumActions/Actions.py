@@ -246,3 +246,8 @@ class SeleniumActions():
 
         if returnScreenShotName==True:
             return directory_to_save_ScreenShot
+
+    def scrollLeftInWebElement(self,cssSelector):
+        # cssSelector='div.right.column.component.EditableContent:nth-child(1) div.component.DynamicContainer:nth-child(3) div.component.EditorLabel div.TableMasterWrapper:nth-child(2) div.sBase > div.sData'
+        scriptToExecute = "document.querySelector""('{}').scrollLeft=530".format(cssSelector)
+        self.driver.execute_script("{}".format(scriptToExecute))
