@@ -30,11 +30,13 @@ class HoFullQuoteClueResultPage():
         self.obj_SeleniumActions.clickmethod(locator=self.HoClueResultContinueButton_locator,
                                              locatorType=self.HoClueResultContinueButton_locatorType)
 
+    def screenShot(self,screenShotName='Default'):
+        self.obj_SeleniumActions.takeScreenShot(screenShotName=screenShotName)
+
 
     def tests_clickoncontinuebuttonforClueResults(self):
         self.completeStingraySpinning()
-        # self.completeStingraySpinning()
-        # self.completeProgressbar()
         self.obj_SeleniumActions.sleepForWhile(30)
-        # self.completeStingraySpinning()
+        self.screenShot(screenShotName='ClueResults')
+        self.obj_SeleniumActions.sleepForWhile(2)
         self.clueResultsContinueButton()

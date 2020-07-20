@@ -1,10 +1,3 @@
-# Wait for Element and Return Element
-# Screenshots
-# Write a method Sleep()
-# Writ a method to select * Dropdown, * check box, * radio Button * Alerts * Warnings
-
-
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By as BY
 from selenium.webdriver.support.ui import Select
@@ -15,12 +8,17 @@ from selenium.common.exceptions import  *
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from TestResults.customLogger import customLogger
+from datetime import datetime
+from pytz import timezone
+from tzlocal import get_localzone
 import logging
-
+from Tests.testData import TestData as TD
+format = "%Y_%m_%d_%H_%M_%S" # time stamp will come in this format
 
 class SeleniumActions():
     def __init__(self,driver):
         self.driver = driver
+        self.timeStamp = (datetime.now(timezone(str(get_localzone()).upper()))).strftime(format)
 
     def by_type(self,locatortype):
         if locatortype.lower()=="id":
@@ -206,3 +204,45 @@ class SeleniumActions():
         scriptForScroll = 'window.scrollBy(0,' + str(-height) + ');'
         self.driver.execute_script("{}".format(scriptForScroll))
 
+    def highlight(self, element,directory_to_save_ScreenShot='Default'):
+        """Highlights (blinks) a Selenium Webdriver element"""
+        driver = self.driver
+        def apply_style(s):
+            driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",element, s)
+        original_style = element.get_attribute('style')
+        apply_style("background: yellow; border: 2px solid red;")
+        if directory_to_save_ScreenShot.lower()=='default':
+            print('only highlight the web element')
+        else:
+            self.driver.save_screenshot(directory_to_save_ScreenShot)
+        time.sleep(1)
+        apply_style(original_style)
+
+    def takeScreenShot(self,element='Default',typeOfScreenShot='Default',screenShotName='Default',path='Default',returnScreenShotName=False):
+        typeOfScreenShot=typeOfScreenShot.lower()
+        screenShotName=screenShotName.lower()
+        path=path.lower()
+        if typeOfScreenShot=='default':
+            typeOfScreenShot='.png'
+        else:
+            typeOfScreenShot='.jpg'
+        if screenShotName=='default':
+            screenShotName='Demo'
+        if path=='default':
+            path=TD.screenShotLocation
+
+        # To maintain Unique file name adding the time stamp to the screenshot
+        screenShotName=str(screenShotName)+str(self.timeStamp)
+        # by adding timestamp (.) is part of the file name, hence replace (.) with empty
+        screenShotName=screenShotName.replace('.','')
+
+        directory_to_save_ScreenShot=path+screenShotName+typeOfScreenShot
+
+        if str(element).lower()=='default':
+            self.driver.save_screenshot(directory_to_save_ScreenShot)
+        else:
+            self.highlight(element,directory_to_save_ScreenShot)
+
+
+        if returnScreenShotName==True:
+            return directory_to_save_ScreenShot

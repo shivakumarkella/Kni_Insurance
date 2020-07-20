@@ -57,7 +57,7 @@ selectvalueforrenewal = "IN_489983"
 
 
 #Data From Excel Sheet
-excelRowNumber=241
+excelRowNumber=233
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
 path='C:\\Users\\kella\workspace_python\\HO_UserData.xlsx'
@@ -101,8 +101,9 @@ amBestNumber = list(data[dataRow].items())[21][1]
 
 
 # ScreenShots and Log File Locations
-location="C:\\Users\\kella\\Workspace_python\\Kni_Insurance\\TestResults\\Screenshots"
+screenShotLocation='TestResults//Screenshots//'
 AutomationFileName = 'automation'
 pathToSaveAutomationLog = "TestResults//DocsScreenShotsLogFiles//"
+
 
 
