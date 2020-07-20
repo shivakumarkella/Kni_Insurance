@@ -250,3 +250,9 @@ class SeleniumActions():
     def scrollLeftInWebElement(self,cssSelector):
         scriptToExecute = "document.querySelector""('{}').scrollLeft=530".format(cssSelector)
         self.driver.execute_script("{}".format(scriptToExecute))
+
+    def getWebElements(self, locator, locatorType='xpath'):
+        byType=self.by_type(locatortype=locatorType)
+        webElements=self.driver.find_elements(byType,locator)
+
+        return webElements

@@ -15,6 +15,8 @@ class HoFullQuoteClueResultPage():
     HoClueResultContinueButton_locatorType= list(Locator['HoClueResultContinueButton'].items())[0][0]
     HoClueResultFullRight_locator = list(Locator['HoClueResultFullRight'].items())[0][1]
     HoClueResultFullRight_locatorType = list(Locator['HoClueResultFullRight'].items())[0][0]
+    HoClueResultUncheck_locator = list(Locator['HoClueResultUncheck'].items())[0][1]
+    HoClueResultUncheck_locatorType = list(Locator['HoClueResultUncheck'].items())[0][0]
 
     def __init__(self, driver):
         self.driver = driver
@@ -38,10 +40,23 @@ class HoFullQuoteClueResultPage():
     def scrollTheResultsTableToRight(self):
         self.obj_SeleniumActions.scrollLeftInWebElement(cssSelector=self.HoClueResultFullRight_locator)
 
+    def getCountOFResults(self):
+        webElements=self.obj_SeleniumActions.getWebElements(locator=self.HoClueResultUncheck_locator)
+        countOfWebElements=len(webElements)
+        return countOfWebElements
+
+    def uncheckAllResults(self):
+        numberOfCheckBoxes = self.getCountOFResults()
+        if int(numberOfCheckBoxes)>2:
+            checkBoxes = self.obj_SeleniumActions.getWebElements(locator=self.HoClueResultUncheck_locator)
+            for checkbox in checkBoxes:
+                if checkbox.is_selected():
+                    checkbox.click()
 
     def tests_clickoncontinuebuttonforClueResults(self):
         self.completeStingraySpinning()
         self.obj_SeleniumActions.sleepForWhile(30)
+        self.uncheckAllResults()
         self.screenShot(screenShotName='ClueResultsLeft')
         self.obj_SeleniumActions.sleepForWhile(1)
         self.scrollTheResultsTableToRight()
