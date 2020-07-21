@@ -147,7 +147,10 @@ HoAddBillingInfoPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
                         "HoRenewalInvoice":{"xpath":"/html[1]/body[1]/div[1]/div[6]/div[1]/div[7]/div[4]/select[1]/option[2]"},
                         "HoBillingInfoContinueButton":{"id":"Continue"}}
 
-# HoRatesPage =
+HoFullQuoteRatesPage = {"SpinnerOverlay":{"id": "spinnerOverlay"},
+                        "HoPaymentPlan":{"xpath":"//div[@id='paymentOptions_Div']//div[3]//input[1]"},
+                        "HoAnnualPlanPayment":{"xpath":"//span[@id='nonEFTPayplan']//tr[2]//td[1]//div[1]//input[1]"},
+                        "HoRatesSaveAndExitButton":{"id":"Save"}}
 
 
 

@@ -12,6 +12,7 @@ from Tests.TestsOnHoFullQuotePage import tests_HoFQUWQuests as HoUWQuest
 from Tests.TestsOnHoFullQuotePage import tests_HoFQClueResults as HoClueResults
 from Tests.TestsOnHoFullQuotePage import tests_HoFQEndorsement as HoEndorsement
 from Tests.TestsOnHoFullQuotePage import tests_HoFQBillingInfo as HoBilling
+from Tests.TestsOnHoFullQuotePage import tests_HoFQRates as HoRates
 import unittest
 import pytest
 from TestResults.customLogger import customLogger
@@ -38,6 +39,7 @@ class test_happyPath(unittest.TestCase):
         self.obj_HoClueResults= HoClueResults.tests_HoFQClueresultsPage(self.driver)
         self.obj_HoEndorsement= HoEndorsement.tests_HoFQEndorsementPage(self.driver)
         self.obj_HoBilling=HoBilling.tests_HoFQBillingInfoPage(self.driver)
+        self.obj_HoRates= HoRates.tests_HoFQRatesPage(self.driver)
 
 
 
@@ -83,6 +85,10 @@ class test_happyPath(unittest.TestCase):
         self.obj_HoBilling.tests_ValidDetailsOnBillingInfoPage()
         self.log.info("CUrrently on the Billing Info Page")
         self.log.info("Billing Address Generated")
+        self.obj_HoRates.tests_ValidDetailsOnRatesPage()
+        self.log.info("Currently on the Rates page")
+        self.log.info("The Policy has been Saved and Exited")
+
 
 
 

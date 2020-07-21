@@ -50,18 +50,18 @@ selectvalueforFuelType="electric"
 
 # Values for UW QUest Page
 applicantKnown ="5"
-applicantKnown ="5"
+
 
 # Values for HoAddBillingInfoPage
-selectvalueforinvoice = "IN_489983"
-selectvalueforrenewal = "IN_489983"
+# selectvalueforinvoice = "IN_489983"
+# selectvalueforrenewal = "IN_489983"
 
 
 #Data From Excel Sheet
-excelRowNumber=223
+excelRowNumber=207
 rowNumber=excelRowNumber-1
 dataRow=rowNumber-1
-path='C:\\Users\\kella\workspace_python\\HO_UserData.xlsx'
+path="D:\\sharath Data\\HO_UserData.xlsx"
 data=pandas.read_excel(path, sheet_name='APLUS Claims Data',nrows=rowNumber, usecols=['LAST NAME', 'FIRST NAME','INSURED SSN',
                                                                                       'INSURED DOB','INSURED GENDER',
                                                                                       'STREET NUMBER','STREET NAME','STREET TYPE',
