@@ -1,5 +1,6 @@
 from Pages_LOB.Locators import ApplicationLocators
 from SeleniumActions import Actions
+from Tests.testData import TestData as TD
 
 
 
@@ -57,9 +58,9 @@ class HoFullQuoteClueResultPage():
         self.completeStingraySpinning()
         self.obj_SeleniumActions.sleepForWhile(30)
         self.uncheckAllResults()
-        self.screenShot(screenShotName='ClueResultsLeft')
+        self.screenShot(screenShotName='{}ClueResultsLeft'.format(TD.excelRowNumber))
         self.obj_SeleniumActions.sleepForWhile(1)
         self.scrollTheResultsTableToRight()
-        self.screenShot(screenShotName='ClueResultsRight')
+        self.screenShot(screenShotName='{}ClueResultsRight'.format(TD.excelRowNumber))
         self.obj_SeleniumActions.sleepForWhile(1)
         self.clueResultsContinueButton()
