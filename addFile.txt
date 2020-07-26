@@ -1,0 +1,18 @@
+ Volume in drive C has no label.
+ Volume Serial Number is A658-1330
+
+ Directory of C:\Users\kella\workspace_python\Kni_Insurance
+
+26-07-2020  14:42    <DIR>          .
+26-07-2020  14:42    <DIR>          ..
+26-07-2020  14:41               172 .gitignore
+26-07-2020  14:41    <DIR>          .idea
+26-07-2020  14:42                 0 addFile.txt
+26-07-2020  14:41    <DIR>          Documents
+26-07-2020  14:41    <DIR>          Pages_LOB
+26-07-2020  14:41                40 README.md
+26-07-2020  14:41    <DIR>          SeleniumActions
+26-07-2020  14:41    <DIR>          TestResults
+26-07-2020  14:41    <DIR>          Tests
+               3 File(s)            212 bytes
+               8 Dir(s)  142,305,837,056 bytes free
