@@ -21,7 +21,7 @@ selectvalueforUsage = "1"
 selectvalueforConstruction = "1"
 
 # Values to be Selected on the E2Value Screen
-coverageAvalue ="47000"
+coverageAvalue ="47500"
 livingArea="1200"
 ConstructionYear="2006"
 selectvalueforReplacementcosttype="full"

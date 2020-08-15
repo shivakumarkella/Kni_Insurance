@@ -32,7 +32,7 @@ class tests_LoginPage():
     def testCase3_InvalidLogin(self):
         #invalid user name , Valid Password
         self.obj_login.login(userName=TD.InValidUsername,password=TD.ValidPassword)
-        self.log.info('Test Data Used for Login , User Name is :: ' + str(TD.ValidUsername))
+        self.log.info('Test Data Used for Login , User Name Must be  :: ' + str(TD.ValidUsername))
         result = self.obj_login.verifyInvalidUsername()
         self.log.info('is Login Suceesful , Result is :: ' + str(result))
 
